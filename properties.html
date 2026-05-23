@@ -1,698 +1,800 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Browse all WealthSpring Properties land listings in FCT Abuja, Nigeria." />
-  <title>Properties | WealthSpring Properties</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Browse all WealthSpring Properties land listings in FCT Abuja, Nigeria."
+    />
+    <title>Properties | WealthSpring Properties</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/properties.css" />
-  <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/properties.css" />
+    <link rel="stylesheet" href="css/sections.css" />
 
-  <style>
-    /* Page-specific styles for the properties listing page */
+    <style>
+      /* Page-specific styles for the properties listing page */
 
-    .props-page-hero {
-      padding-top: var(--nav-height);
-      padding-bottom: 48px;
-      padding-left: var(--page-x);
-      padding-right: var(--page-x);
-      background: var(--black-soft);
-      text-align: center;
-      position: relative;
-    }
+      .props-page-hero {
+        padding-top: var(--nav-height);
+        padding-bottom: 48px;
+        padding-left: var(--page-x);
+        padding-right: var(--page-x);
+        background: var(--black-soft);
+        text-align: center;
+        position: relative;
+      }
 
-    .props-page-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
+      .props-page-hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+      }
 
-    .props-page-hero .section-label {
-      justify-content: center;
-      margin-top: 40px;
-      margin-bottom: 12px;
-    }
+      .props-page-hero .section-label {
+        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 12px;
+      }
 
-    .props-page-hero .section-label::before {
-      display: none;
-    }
+      .props-page-hero .section-label::before {
+        display: none;
+      }
 
-    .props-page-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 8vw, 3.5rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
+      .props-page-title {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        font-weight: 300;
+        color: var(--white);
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
 
-    .props-page-title em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
+      .props-page-title em {
+        font-style: italic;
+        color: var(--gold-light);
+      }
 
-    .props-page-sub {
-      font-family: var(--sans);
-      font-size: 0.88rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.5);
-      max-width: 420px;
-      margin: 0 auto;
-      line-height: 1.72;
-    }
+      .props-page-sub {
+        font-family: var(--sans);
+        font-size: 0.88rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 420px;
+        margin: 0 auto;
+        line-height: 1.72;
+      }
 
-    /* Filter bar */
-    .props-filter-bar {
-      background: var(--white);
-      border-bottom: 1px solid var(--gray-border);
-      padding: 14px var(--page-x);
-      display: flex;
-      gap: 9px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      position: sticky;
-      top: var(--nav-height);
-      z-index: 100;
-    }
+      /* Filter bar */
+      .props-filter-bar {
+        background: var(--white);
+        border-bottom: 1px solid var(--gray-border);
+        padding: 14px var(--page-x);
+        display: flex;
+        gap: 9px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        position: sticky;
+        top: var(--nav-height);
+        z-index: 100;
+      }
 
-    .props-filter-bar::-webkit-scrollbar {
-      display: none;
-    }
+      .props-filter-bar::-webkit-scrollbar {
+        display: none;
+      }
 
-    .filter-chip {
-      background: var(--white);
-      border: 1.5px solid var(--gray-border);
-      color: var(--gray-dark);
-      padding: 7px 16px;
-      border-radius: 40px;
-      font-family: var(--sans);
-      font-size: 0.76rem;
-      font-weight: 500;
-      cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: all var(--speed) var(--ease);
-      -webkit-tap-highlight-color: transparent;
-    }
+      .filter-chip {
+        background: var(--white);
+        border: 1.5px solid var(--gray-border);
+        color: var(--gray-dark);
+        padding: 7px 16px;
+        border-radius: 40px;
+        font-family: var(--sans);
+        font-size: 0.76rem;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: all var(--speed) var(--ease);
+        -webkit-tap-highlight-color: transparent;
+      }
 
-    .filter-chip.active {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--white);
-    }
+      .filter-chip.active {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--white);
+      }
 
-    .filter-chip:not(.active):hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
+      .filter-chip:not(.active):hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
 
-    /* Listings section */
-    .props-page-section {
-      padding: var(--section-y) var(--page-x);
-      background: var(--off-white);
-    }
+      /* Listings section */
+      .props-page-section {
+        padding: var(--section-y) var(--page-x);
+        background: var(--off-white);
+      }
 
-    .props-page-section .section-inner {
-      max-width: 1200px;
-    }
+      .props-page-section .section-inner {
+        max-width: 1200px;
+      }
 
-    /* Coming soon card */
-    .property-card-placeholder {
-      background: var(--white);
-      border: 1.5px dashed var(--gray-border);
-      border-radius: var(--radius-md);
-      padding: 40px 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      text-align: center;
-      min-height: 300px;
-    }
+      /* Coming soon card */
+      .property-card-placeholder {
+        background: var(--white);
+        border: 1.5px dashed var(--gray-border);
+        border-radius: var(--radius-md);
+        padding: 40px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        text-align: center;
+        min-height: 300px;
+      }
 
-    .property-card-placeholder svg {
-      opacity: 0.25;
-    }
+      .property-card-placeholder svg {
+        opacity: 0.25;
+      }
 
-    .property-card-placeholder h3 {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--gray-mid);
-    }
+      .property-card-placeholder h3 {
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--gray-mid);
+      }
 
-    .property-card-placeholder p {
-      font-family: var(--sans);
-      font-size: 0.76rem;
-      font-weight: 300;
-      color: var(--gray-light);
-      line-height: 1.65;
-      max-width: 220px;
-    }
-  </style>
-</head>
-<body>
-
-
-<!-- ================================================
+      .property-card-placeholder p {
+        font-family: var(--sans);
+        font-size: 0.76rem;
+        font-weight: 300;
+        color: var(--gray-light);
+        line-height: 1.65;
+        max-width: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================================================
      NAVBAR
 ================================================ -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+        <!-- Brand -->
+        <a
+          href="index.html"
+          class="nav-brand"
+          aria-label="WealthSpring Properties — Home"
+        >
+          <img
+            src="assets/logo/Wealthspring Logo.png"
+            alt="WealthSpring Properties"
+            class="nav-logo-img"
+          />
+        </a>
 
-    <!-- Brand -->
-    <a href="index.html" class="nav-brand" aria-label="WealthSpring Properties — Home">
-    
-      <img src="assets/logo/Wealthspring Logo.png" alt="WealthSpring Properties" class="nav-logo-img" />
-    </a>
+        <!-- Desktop links -->
+        <div class="nav-links-desktop" role="menubar">
+          <a href="#about" role="menuitem">About</a>
+          <a href="#properties" role="menuitem">City &amp; Properties</a>
+          <a href="#contact" role="menuitem">Schedule Inspection</a>
+          <a href="#contact" role="menuitem">Contact</a>
+        </div>
 
-    <!-- Desktop links -->
-    <div class="nav-links-desktop" role="menubar">
-      <a href="#about"      role="menuitem">About</a>
-      <a href="#properties" role="menuitem">City &amp; Properties</a>
-      <a href="#contact"    role="menuitem">Schedule Inspection</a>
-      <a href="#contact"    role="menuitem">Contact</a>
+        <!-- Desktop CTA -->
+        <div class="nav-desktop-cta">
+          <a
+            href="spring-ai.html"
+            class="btn btn-spring-ai"
+            style="padding: 10px 16px; font-size: 0.76rem; margin-right: 8px"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="margin-right: 6px"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z"
+                fill="currentColor"
+              />
+            </svg>
+            SpringAI
+          </a>
+          <button
+            class="btn btn-whatsapp"
+            data-wa="general"
+            style="padding: 10px 20px; font-size: 0.76rem"
+          >
+            <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+              />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+              />
+            </svg>
+            WhatsApp Us
+          </button>
+        </div>
+
+        <button
+          class="nav-hamburger"
+          id="hamburger"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="nav-drawer" id="nav-drawer" aria-label="Navigation menu">
+      <nav class="nav-drawer-links">
+        <a href="index.html#about" class="nav-drawer-link"
+          >About <span class="link-arrow">&#8594;</span></a
+        >
+        <a href="index.html#properties" class="nav-drawer-link"
+          >City &amp; Properties <span class="link-arrow">&#8594;</span></a
+        >
+        <a href="spring-ai.html" class="nav-drawer-link"
+          >SpringAI <span class="link-arrow">&#8594;</span></a
+        >
+        <a href="index.html#contact" class="nav-drawer-link"
+          >Contact <span class="link-arrow">&#8594;</span></a
+        >
+      </nav>
+      <div class="nav-drawer-actions">
+        <a href="spring-ai.html" class="btn btn-spring-ai btn-full">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="margin-right: 8px"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z"
+              fill="currentColor"
+            />
+          </svg>
+          Chat with SpringAI
+        </a>
+        <button class="btn btn-gold btn-full btn-cta" data-wa="inspection">
+          Schedule an Inspection
+        </button>
+        <button class="btn btn-whatsapp btn-full" data-wa="general">
+          WhatsApp Us
+        </button>
+      </div>
     </div>
 
-    <!-- Desktop CTA -->
-    <div class="nav-desktop-cta">
-      <a href="spring-ai.html" class="btn btn-spring-ai" style="padding: 10px 16px; font-size: 0.76rem; margin-right: 8px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 6px;">
-          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z" fill="currentColor"/>
-        </svg>
-        SpringAI
-      </a>
-      <button class="btn btn-whatsapp" data-wa="general" style="padding: 10px 20px; font-size: 0.76rem;">
-        <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
-        </svg>
-        WhatsApp Us
-      </button>
-    </div>
-
-    <button
-      class="nav-hamburger"
-      id="hamburger"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="nav-drawer"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-</nav>
-
-<div class="nav-drawer" id="nav-drawer" aria-label="Navigation menu">
-  <nav class="nav-drawer-links">
-    <a href="index.html#about"      class="nav-drawer-link">About <span class="link-arrow">&#8594;</span></a>
-    <a href="index.html#properties" class="nav-drawer-link">City &amp; Properties <span class="link-arrow">&#8594;</span></a>
-    <a href="spring-ai.html"        class="nav-drawer-link">SpringAI <span class="link-arrow">&#8594;</span></a>
-    <a href="index.html#contact"    class="nav-drawer-link">Contact <span class="link-arrow">&#8594;</span></a>
-  </nav>
-  <div class="nav-drawer-actions">
-    <a href="spring-ai.html" class="btn btn-spring-ai btn-full">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-        <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z" fill="currentColor"/>
-      </svg>
-      Chat with SpringAI
-    </a>
-    <button class="btn btn-gold btn-full btn-cta" data-wa="inspection">Schedule an Inspection</button>
-    <button class="btn btn-whatsapp btn-full" data-wa="general">WhatsApp Us</button>
-  </div>
-</div>
-
-
-<!-- ================================================
+    <!-- ================================================
      PAGE HERO
 ================================================ -->
-<div class="props-page-hero">
-  <span class="section-label">FCT Abuja, Nigeria</span>
-  <h1 class="props-page-title">All <em>Properties</em></h1>
-  <p class="props-page-sub">
-    Browse every available land site — verified, documented, and ready for your investment.
-  </p>
-</div>
+    <div class="props-page-hero">
+      <span class="section-label">FCT Abuja, Nigeria</span>
+      <h1 class="props-page-title">All <em>Properties</em></h1>
+      <p class="props-page-sub">
+        Browse every available land site — verified, documented, and ready for
+        your investment.
+      </p>
+    </div>
 
-
-<!-- ================================================
+    <!-- ================================================
      FILTER BAR
 ================================================ -->
-<div class="props-filter-bar" role="group" aria-label="Filter properties">
-  <button class="filter-chip active" data-filter="all">All Sites</button>
-  <button class="filter-chip" data-filter="gwarinpa">Gwarinpa</button>
-  <button class="filter-chip" data-filter="kuje">Kuje</button>
-  <button class="filter-chip" data-filter="lugbe">Lugbe</button>
-  <button class="filter-chip" data-filter="300sqm">300 SQM</button>
-  <button class="filter-chip" data-filter="500sqm">500 SQM +</button>
-</div>
+    <div class="props-filter-bar" role="group" aria-label="Filter properties">
+      <button class="filter-chip active" data-filter="all">All Sites</button>
+      <button class="filter-chip" data-filter="gwarinpa">Gwarinpa</button>
+      <button class="filter-chip" data-filter="kuje">Kuje</button>
+      <button class="filter-chip" data-filter="lugbe">Lugbe</button>
+      <button class="filter-chip" data-filter="300sqm">300 SQM</button>
+      <button class="filter-chip" data-filter="500sqm">500 SQM +</button>
+    </div>
 
-
-<!-- ================================================
+    <!-- ================================================
      LISTINGS
 ================================================ -->
-<section class="props-page-section">
-  <div class="section-inner">
-    <div class="properties-grid">
-
-      <!-- Card 1 -->
-      <article
-        class="property-card fade-up"
-        data-property="site-alpha"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Greenfield Estate Site Alpha"
-      >
-        <div class="property-card-img-wrap">
-          <!--
+    <section class="props-page-section">
+      <div class="section-inner">
+        <div class="properties-grid">
+          <!-- Card 1 -->
+          <article
+            class="property-card fade-up"
+            data-property="site-alpha">
+            <div class="property-card-img-wrap">
+              <!--
             Replace placeholder with:
             <img src="assets/images/properties/site-alpha.jpg" alt="Greenfield Estate" class="property-card-img" />
           -->
-          <img src="assets/images/properties/Wealthspring The Cove.png" alt="Greenfield Estate" class="property-card-img" />
-        </div>
+              <img
+                src="assets/images/properties/Wealthspring The Cove.png"
+                alt="Greenfield Estate"
+                class="property-card-img"
+              />
+            </div>
 
-        <div class="property-card-body">
-          <h3 class="property-card-name">The Cove</h3>
-          <p class="property-card-location">Katampe Extention, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;29M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>300</strong>&ndash;500 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Surveyed</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+            <div class="property-card-body">
+              <h3 class="property-card-name">The Cove</h3>
+              <p class="property-card-location">Katampe Extention, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;29M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>300</strong>&ndash;500 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Surveyed</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <!-- Card 2 -->
-      <article
-        class="property-card fade-up"
-        data-property="site-beta"
-        role="button"
-        tabindex="0"
-        aria-label="View details for WealthSpring Courts Site Beta"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Wealthspring wealthcourt 6.png" alt="WealthSpring Courts" class="property-card-img" />
-          <span class="property-badge property-badge-dark">Hot Deal</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">WealthCourt</h3>
-          <p class="property-card-location">Phase 2 Kuje, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;2M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>200</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <!-- Card 2 -->
+          <article
+            class="property-card fade-up"
+            data-property="site-beta">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Wealthspring wealthcourt 6.png"
+                alt="WealthSpring Courts"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">Hot Deal</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">WealthCourt</h3>
+              <p class="property-card-location">Phase 2 Kuje, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;2M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>200</strong>&ndash;1,000 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <!-- Card 3 -->
-      <article
-        class="property-card fade-up"
-        data-property="site-gamma"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Springview Gardens Site Gamma"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Wealthspring Estora Residence UPDATED.png" alt="Estora Residence" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Estora Residence</h3>
-          <p class="property-card-location">Maitama II, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;10M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <!-- Card 3 -->
+          <article
+            class="property-card fade-up"
+            data-property="site-gamma">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Wealthspring Estora Residence UPDATED.png"
+                alt="Estora Residence"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Estora Residence</h3>
+              <p class="property-card-location">Maitama II, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;10M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>250</strong>&ndash;1,000 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <!-- Card 4 -->
-      <article
-        class="property-card fade-up"
-        data-property="havilahs-court"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Havilahs Court"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Havilahs Court.png"   alt="Havilahs Court" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Havilahs Court</h3>
-          <p class="property-card-location">Maitama II, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;15M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <!-- Card 4 -->
+          <article
+            class="property-card fade-up"
+            data-property="havilahs-court">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Havilahs Court.png"
+                alt="Havilahs Court"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Havilahs Court</h3>
+              <p class="property-card-location">Maitama II, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;15M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>250</strong>&ndash;1,000 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="suncrest-estate"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Suncrest Estate"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Suncrest Estate.png"   alt="Suncrest Estate" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Suncrest Estate</h3>
-          <p class="property-card-location">Kurudu, Phase 1, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;2.2M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>150</strong>&ndash;350 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="suncrest-estate">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Suncrest Estate.png"
+                alt="Suncrest Estate"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Suncrest Estate</h3>
+              <p class="property-card-location">Kurudu, Phase 1, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;2.2M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>150</strong>&ndash;350 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="hutu-polo"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Hutu Polo Golf Resort"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/HUTU POLO ESTATE.png" alt="Hutu Polo Golf Resort" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Hutu Polo Golf Resort</h3>
-          <p class="property-card-location">Before Cetenary road, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;9.3M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>150</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="hutu-polo">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/HUTU POLO ESTATE.png"
+                alt="Hutu Polo Golf Resort"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Hutu Polo Golf Resort</h3>
+              <p class="property-card-location">
+                Before Cetenary road, FCT Abuja
+              </p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;9.3M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>150</strong>&ndash;1,000 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="upper-heaven"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Upper Heaven"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Wealthspring Pyakasa Ediited.png" alt="Havilahs Court" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Upper Heaven</h3>
-          <p class="property-card-location">Sheretti-Kabusa, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;10M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;600 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="upper-heaven">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Wealthspring Pyakasa Ediited.png"
+                alt="Havilahs Court"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Upper Heaven</h3>
+              <p class="property-card-location">Sheretti-Kabusa, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;10M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>250</strong>&ndash;600 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="stabug-golf"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Stabug Golf Resort"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Wealthspring Stabug golf.png" alt="Stabug Golf Resort" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Stabug Golf Resort</h3>
-          <p class="property-card-location">Karshi, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;2.5M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="stabug-golf">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Wealthspring Stabug golf.png"
+                alt="Stabug Golf Resort"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Stabug Golf Resort</h3>
+              <p class="property-card-location">Karshi, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;2.5M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>250</strong>&ndash;1,000 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="signature-estate"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Signature Estate"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Wealthspring Signature estate.png" alt="Signature Estate" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Signature Estate</h3>
-          <p class="property-card-location">Ojo, Lagos</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;25M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;500 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="signature-estate">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Wealthspring Signature estate.png"
+                alt="Signature Estate"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Signature Estate</h3>
+              <p class="property-card-location">Ojo, Lagos</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;25M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>250</strong>&ndash;500 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="comfort-villa"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Comfort Villa"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Comfort Villa Redesign.png" alt="Comfort Villa" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Comfort Villa</h3>
-          <p class="property-card-location">Lugbe, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;16M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;400 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="comfort-villa">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Comfort Villa Redesign.png"
+                alt="Comfort Villa"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Comfort Villa</h3>
+              <p class="property-card-location">Lugbe, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;16M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>250</strong>&ndash;400 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="ridge-city "
-        role="button"
-        tabindex="0"
-        aria-label="View details for Ridge City "
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Ridge City Redesign.png" alt="Ridge City" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Ridge City</h3>
-          <p class="property-card-location">Guzape 2, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;27.5M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="ridge-city ">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Ridge City Redesign.png"
+                alt="Ridge City"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Ridge City</h3>
+              <p class="property-card-location">Guzape 2, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;27.5M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>250</strong>&ndash;1,000 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-      <article
-        class="property-card fade-up"
-        data-property="homesphere"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Homesphere"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Homesphere Redesign.png" alt="Homesphere" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Homesphere</h3>
-          <p class="property-card-location">Karsana South, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;18M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>270</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+          <article
+            class="property-card fade-up"
+            data-property="homesphere">
+            <div class="property-card-img-wrap">
+              <img
+                src="assets/images/properties/Homesphere Redesign.png"
+                alt="Homesphere"
+                class="property-card-img"
+              />
+              <span class="property-badge property-badge-dark">New</span>
+            </div>
+            <div class="property-card-body">
+              <h3 class="property-card-name">Homesphere</h3>
+              <p class="property-card-location">Karsana South, FCT Abuja</p>
+              <div class="property-card-price-row">
+                <span class="property-card-price">From &#8358;18M</span>
+                <span class="property-card-price-note"></span>
+              </div>
+              <div class="property-card-meta">
+                <span class="property-meta-tag"
+                  ><strong>270</strong>&ndash;1,000 SQM</span
+                >
+                <span class="property-meta-tag">FCDA Approved</span>
+                <span class="property-meta-tag">Documented</span>
+              </div>
+              <div class="property-card-actions">
+                <button class="btn btn-outline-gold" data-wa="enquiry">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-
-      <!-- Coming soon placeholder -->
-      <div class="property-card-placeholder fade-up">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="2"/>
-          <line x1="12" y1="8" x2="12" y2="16"/>
-          <line x1="8" y1="12" x2="16" y2="12"/>
-        </svg>
-        <h3>Want to Know about more Sites?</h3>
-        <p>
-          We are adding more verified plots. Contact us to be notified when a new site is listed.
-        </p>
-        <button class="btn btn-outline-gold" data-wa="general" style="font-size: 0.76rem; padding: 9px 18px;">
-          Notify Me
-        </button>
+          <!-- Coming soon placeholder -->
+          <div class="property-card-placeholder fade-up">
+            <svg
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="12" y1="8" x2="12" y2="16" />
+              <line x1="8" y1="12" x2="16" y2="12" />
+            </svg>
+            <h3>Want to Know about more Sites?</h3>
+            <p>
+              We are adding more verified plots. Contact us to be notified when
+              a new site is listed.
+            </p>
+            <button
+              class="btn btn-outline-gold"
+              data-wa="general"
+              style="font-size: 0.76rem; padding: 9px 18px"
+            >
+              Notify Me
+            </button>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-
-
-<!-- ================================================
-     PROPERTY MODAL
-================================================ -->
-<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Property Details">
-  <div class="modal-box" id="modal-content">
-    <!-- Populated by main.js -->
-  </div>
-</div>
-
-
-<!-- ================================================
+    <!-- ================================================
      FLOATING WHATSAPP BUTTON
 ================================================ -->
-<button class="float-wa" data-wa="general" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
-  </svg>
-</button>
+    <button class="float-wa" data-wa="general" aria-label="Chat on WhatsApp">
+      <svg
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="white"
+        aria-hidden="true"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+        />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+        />
+      </svg>
+    </button>
 
-
-<script src="js/main.js"></script>
-<script>
-  /* Filter chips — visual only for now */
-  document.querySelectorAll('.filter-chip').forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      document.querySelectorAll('.filter-chip').forEach(function (c) {
-        c.classList.remove('active');
+    <script src="js/main.js"></script>
+    <script>
+      /* Filter chips — visual only for now */
+      document.querySelectorAll(".filter-chip").forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          document.querySelectorAll(".filter-chip").forEach(function (c) {
+            c.classList.remove("active");
+          });
+          chip.classList.add("active");
+        });
       });
-      chip.classList.add('active');
-    });
-  });
-</script>
-</body>
+    </script>
+  </body>
 </html>
