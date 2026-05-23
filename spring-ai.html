@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Chat with SpringAI — WealthSpring Properties intelligent assistant." />
+  <title>SpringAI | WealthSpring Properties</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/spring-ai.css" />
+</head>
+<body style="background: var(--black-soft); overflow: hidden;">
+
+
+<!-- ================================================
+     CHAT PAGE
+================================================ -->
+<div class="chat-page-wrapper">
+
+  <!-- Top bar -->
+  <div class="chat-top-bar">
+    <a href="index.html" class="chat-back-btn" aria-label="Back to home">&#8592;</a>
+    <div class="chat-top-avatar" aria-hidden="true">S</div>
+    <div class="chat-top-info">
+      <span class="chat-top-name">SpringAI</span>
+      <span class="chat-top-status">
+        <span class="online-dot" aria-hidden="true"></span>
+        WealthSpring Properties Assistant
+      </span>
+    </div>
+    <button class="chat-wa-btn" data-wa="springai" aria-label="Switch to WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Messages area -->
+  <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Chat messages">
+
+    <div class="chat-date-label">Today</div>
+
+    <p class="chat-system-note">
+      You are chatting with SpringAI, WealthSpring Properties intelligent assistant.
+      For complex enquiries, SpringAI will connect you to our team.
+    </p>
+
+    <div class="msg-row">
+      <div class="msg-row-avatar" aria-hidden="true">S</div>
+      <div class="msg-group">
+        <div class="msg-bubble msg-bubble-bot">
+          Welcome to WealthSpring Properties. I am SpringAI, your property assistant.
+          How can I help you today?
+        </div>
+        <span class="msg-time">Just now</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Quick replies -->
+  <div class="quick-replies-bar" id="quick-replies-bar" role="group" aria-label="Quick reply options">
+    <button class="quick-reply" onclick="handleQuickReply('What properties are available?')">Properties available?</button>
+    <button class="quick-reply" onclick="handleQuickReply('How much does a plot cost?')">Plot prices?</button>
+    <button class="quick-reply" onclick="handleQuickReply('How do I schedule an inspection?')">Schedule inspection</button>
+    <button class="quick-reply" onclick="handleQuickReply('What documents do your plots have?')">Documentation?</button>
+    <button class="quick-reply" onclick="handleQuickReply('What payment plans do you offer?')">Payment plans?</button>
+  </div>
+
+  <!-- Input bar -->
+  <div class="chat-input-bar">
+    <div class="chat-input-field-wrap">
+      <textarea
+        id="chat-input"
+        placeholder="Type a message..."
+        rows="1"
+        aria-label="Chat message"
+      ></textarea>
+    </div>
+    <button class="chat-send-btn" id="chat-send" aria-label="Send message">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+      </svg>
+    </button>
+  </div>
+
+</div>
+
+
+<script src="js/main.js"></script>
+<script src="js/spring-ai.js"></script>
+</body>
+</html>

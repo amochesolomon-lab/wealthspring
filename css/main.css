@@ -1,0 +1,571 @@
+/* ==============================================
+   WEALTHSPRING PROPERTIES
+   Global Styles — Design System
+   Mobile First
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* -----------------------------------------------
+   CSS VARIABLES
+----------------------------------------------- */
+:root {
+  /* Brand Colors */
+  --white:         #FFFFFF;
+  --off-white:     #FDFBF7;
+  --gold-pale:     #FDF8EE;
+  --gold-light:    #E8C97A;
+  --gold:          #C9A84C;
+  --gold-dark:     #A8863A;
+  --black:         #0A0A0A;
+  --black-soft:    #1A1A1A;
+
+  /* UI Colors */
+  --gray-dark:     #333333;
+  --gray-mid:      #666666;
+  --gray-light:    #999999;
+  --gray-border:   #E8E3D8;
+  --gray-bg:       #F5F2EC;
+  --whatsapp:      #25D366;
+
+  /* Typography */
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Outfit', sans-serif;
+
+  /* Spacing */
+  --page-x:       20px;
+  --section-y:    72px;
+  --nav-height:   68px;
+
+  /* Effects */
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --speed:        0.3s;
+  --shadow-sm:    0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md:    0 8px 32px rgba(0,0,0,0.10);
+  --shadow-gold:  0 8px 28px rgba(201,168,76,0.22);
+
+  /* Border radius */
+  --radius-sm:  4px;
+  --radius-md:  10px;
+  --radius-lg:  18px;
+}
+
+/* -----------------------------------------------
+   RESET
+----------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--white);
+  color: var(--black-soft);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--sans);
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--sans);
+  font-size: 1rem;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+/* -----------------------------------------------
+   SECTION WRAPPER
+----------------------------------------------- */
+.section {
+  padding: var(--section-y) var(--page-x);
+}
+
+.section-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -----------------------------------------------
+   SECTION LABEL
+----------------------------------------------- */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* -----------------------------------------------
+   GOLD DIVIDER
+----------------------------------------------- */
+.gold-line {
+  width: 44px;
+  height: 2px;
+  background: var(--gold);
+  margin: 14px 0 22px;
+}
+
+.gold-line-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -----------------------------------------------
+   BUTTONS
+----------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 640px) {
+  .btn {
+    white-space: normal;
+    padding: 14px 24px;
+    font-size: 0.82rem;
+  }
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+  animation: btnPulse 2s ease-in-out infinite;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  animation: none;
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3); }
+  50% { box-shadow: 0 8px 28px rgba(201, 168, 76, 0.5); }
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-gold:hover {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--white);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 8px rgba(201, 168, 76, 0.1);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-black {
+  background: linear-gradient(135deg, var(--black) 0%, var(--black-soft) 100%);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-black:hover {
+  background: linear-gradient(135deg, var(--black-soft) 0%, var(--black) 100%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-outline-black {
+  background: transparent;
+  color: var(--black-soft);
+  border: 2px solid var(--black-soft);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-black:hover {
+  background: linear-gradient(135deg, var(--black) 0%, var(--black-soft) 100%);
+  color: var(--white);
+  border-color: var(--black);
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, var(--whatsapp) 0%, #1ebe5d 100%);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  animation: whatsappGlow 2.5s ease-in-out infinite;
+  position: relative;
+}
+
+.btn-whatsapp::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--whatsapp), #25d366, #1ebe5d);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  animation: whatsappRing 2.5s ease-in-out infinite;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #1ebe5d 0%, var(--whatsapp) 100%);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  animation: none;
+}
+
+.btn-whatsapp:hover::after {
+  animation: whatsappRingHover 0.6s ease-out;
+}
+
+@keyframes whatsappGlow {
+  0%, 100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3); }
+  50% { box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5); }
+}
+
+@keyframes whatsappRing {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+@keyframes whatsappRingHover {
+  0% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.05); }
+}
+
+.btn-spring-ai {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+  animation: springAiGlow 2.5s ease-in-out infinite;
+  position: relative;
+}
+
+.btn-spring-ai::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold-dark));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  animation: springAiRing 2.5s ease-in-out infinite;
+}
+
+.btn-spring-ai:hover {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  animation: none;
+}
+
+.btn-spring-ai:hover::after {
+  animation: springAiRingHover 0.6s ease-out;
+}
+
+@keyframes springAiGlow {
+  0%, 100% { box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3); }
+  50% { box-shadow: 0 8px 28px rgba(201, 168, 76, 0.5); }
+}
+
+@keyframes springAiRing {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+@keyframes springAiRingHover {
+  0% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.05); }
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Special CTA attention-grabber */
+.btn-cta {
+  position: relative;
+  animation: ctaAttention 3s ease-in-out infinite;
+}
+
+.btn-cta::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, var(--gold), var(--whatsapp), var(--gold));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  animation: ctaRing 3s ease-in-out infinite;
+}
+
+@keyframes ctaAttention {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes ctaRing {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.02); }
+}
+
+.btn-cta:hover {
+  animation: none;
+}
+
+.btn-cta:hover::after {
+  animation: ctaRingHover 0.6s ease-out;
+}
+
+@keyframes ctaRingHover {
+  0% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.08); }
+  100% { opacity: 0; transform: scale(1.02); }
+}
+
+.wa-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+/* -----------------------------------------------
+   SCROLL ANIMATIONS
+----------------------------------------------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up:nth-child(2) { transition-delay: 0.08s; }
+.fade-up:nth-child(3) { transition-delay: 0.16s; }
+.fade-up:nth-child(4) { transition-delay: 0.24s; }
+
+/* -----------------------------------------------
+   MODAL
+----------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--speed) var(--ease);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  background: var(--white);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 28px var(--page-x) 44px;
+  transform: translateY(32px);
+  transition: transform 0.38s var(--ease);
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.modal-overlay.open .modal-box {
+  transform: translateY(0);
+}
+
+.modal-handle {
+  width: 38px;
+  height: 4px;
+  background: var(--gray-border);
+  border-radius: 2px;
+  margin: 0 auto 22px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-bg);
+  border-radius: 50%;
+  border: none;
+  font-size: 1rem;
+  color: var(--gray-mid);
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* -----------------------------------------------
+   PLACEHOLDER BLOCKS
+   (used where real images/videos will go)
+----------------------------------------------- */
+.img-placeholder {
+  background: linear-gradient(135deg, #f0ece4 0%, #e8e0d0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--gray-light);
+  font-size: 0.75rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.img-placeholder svg {
+  opacity: 0.35;
+}
+
+/* -----------------------------------------------
+   UTILITY
+----------------------------------------------- */
+.text-gold   { color: var(--gold); }
+.text-center { text-align: center; }
+.italic      { font-style: italic; }
+.serif       { font-family: var(--serif); }
+
+/* -----------------------------------------------
+   TABLET  768px+
+----------------------------------------------- */
+@media (min-width: 768px) {
+  :root {
+    --page-x:     40px;
+    --section-y:  96px;
+    --nav-height: 78px;
+  }
+
+  .modal-overlay {
+    align-items: center;
+  }
+
+  .modal-box {
+    border-radius: var(--radius-lg);
+    margin: auto;
+  }
+}
+
+/* -----------------------------------------------
+   DESKTOP  1024px+
+----------------------------------------------- */
+@media (min-width: 1024px) {
+  :root {
+    --page-x:    64px;
+    --section-y: 110px;
+  }
+}

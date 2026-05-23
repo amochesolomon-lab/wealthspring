@@ -1,0 +1,181 @@
+/* ==============================================
+   ABOUT SECTION
+   ============================================== */
+
+#about {
+  background: var(--white);
+}
+
+.about-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* -----------------------------------------------
+   TEXT SIDE
+----------------------------------------------- */
+.about-text {}
+
+.about-title {
+  font-family: var(--sans);
+  font-size: clamp(1.7rem, 6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--black-soft);
+  margin-bottom: 6px;
+}
+
+.about-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.about-body {
+  font-family: var(--sans);
+  font-size: 0.93rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--gray-mid);
+  margin-bottom: 16px;
+}
+
+/* Feature pillars */
+.about-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+  margin-bottom: 28px;
+}
+
+.about-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.pillar-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+}
+
+.pillar-body strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black-soft);
+  margin-bottom: 3px;
+}
+
+.pillar-body span {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  line-height: 1.5;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* -----------------------------------------------
+   IMAGE SIDE
+----------------------------------------------- */
+.about-image-wrap {
+  position: relative;
+}
+
+.about-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 260px;
+  border-radius: var(--radius-md);
+}
+
+/* Gold frame accent */
+.about-frame {
+  position: absolute;
+  bottom: -14px;
+  right: -14px;
+  width: 70px;
+  height: 70px;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-sm);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Stats badge */
+.about-stat-badge {
+  position: absolute;
+  bottom: 20px;
+  left: -8px;
+  background: var(--gold);
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-gold);
+  text-align: center;
+  line-height: 1;
+}
+
+.about-stat-badge-num {
+  display: block;
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.about-stat-badge-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+/* -----------------------------------------------
+   DESKTOP  1024px+
+----------------------------------------------- */
+@media (min-width: 1024px) {
+  .about-inner {
+    flex-direction: row-reverse;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .about-image-wrap {
+    flex: 1;
+  }
+
+  .about-img-placeholder {
+    aspect-ratio: 3 / 4;
+    min-height: 480px;
+  }
+
+  .about-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}

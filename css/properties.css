@@ -1,0 +1,418 @@
+/* ==============================================
+   PROPERTIES SECTION  (index.html featured section)
+   Also used on properties.html
+   ============================================== */
+
+#properties {
+  background: var(--off-white);
+  position: relative;
+}
+
+#properties::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--page-x);
+  right: var(--page-x);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* -----------------------------------------------
+   SECTION HEADER
+----------------------------------------------- */
+.properties-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.properties-title {
+  font-family: var(--sans);
+  font-size: clamp(1.7rem, 6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--black-soft);
+  margin-bottom: 20px;
+}
+
+.properties-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* Location notice banner */
+.location-notice {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-left: 3px solid var(--gold);
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+  max-width: 520px;
+}
+
+.location-notice-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.location-notice strong {
+  display: block;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--black-soft);
+  margin-bottom: 3px;
+}
+
+.location-notice span {
+  font-size: 0.76rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  font-style: italic;
+}
+
+/* -----------------------------------------------
+   PROPERTY CARD GRID
+----------------------------------------------- */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .properties-grid {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 720px) {
+  .properties-grid {
+    gap: 20px;
+  }
+}
+
+/* -----------------------------------------------
+   PROPERTY CARD
+----------------------------------------------- */
+.property-card {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform var(--speed) var(--ease),
+              box-shadow var(--speed) var(--ease),
+              border-color var(--speed) var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-light);
+}
+
+/* Image wrap */
+.property-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.property-card-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 130px;
+}
+
+/*
+  When real images are added:
+  .property-card-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s var(--ease);
+  }
+  .property-card:hover .property-card-img {
+    transform: scale(1.04);
+  }
+*/
+
+/* Badge */
+.property-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 30px;
+}
+
+.property-badge-dark {
+  background: var(--black);
+}
+
+/* Card body */
+.property-card-body {
+  padding: 14px;
+}
+
+.property-card-name {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black-soft);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.property-card-location {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  margin-bottom: 10px;
+}
+
+.property-card-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.property-card-price {
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.property-card-price-note {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: var(--gray-light);
+}
+
+.property-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-border);
+  margin-bottom: 12px;
+}
+
+.property-meta-tag {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--gray-mid);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.property-meta-tag strong {
+  font-weight: 600;
+  color: var(--black-soft);
+}
+
+.property-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.property-card-actions .btn {
+  flex: 1 1 80px;
+  min-width: 70px;
+  font-size: 0.7rem;
+  padding: 8px 10px;
+  white-space: normal;
+}
+
+/* -----------------------------------------------
+   PROPERTIES FOOTER
+----------------------------------------------- */
+.properties-footer {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* -----------------------------------------------
+   PROPERTY MODAL CONTENTS
+----------------------------------------------- */
+.modal-prop-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 180px;
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+}
+
+.modal-prop-badge-row {
+  margin-bottom: 8px;
+}
+
+.modal-prop-name {
+  font-family: var(--sans);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--black-soft);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.modal-prop-location {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  margin-bottom: 16px;
+}
+
+.modal-prop-desc {
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--gray-mid);
+  margin-bottom: 22px;
+}
+
+.modal-sqm-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.modal-sqm-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.modal-sqm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius-sm);
+}
+
+.modal-sqm-size {
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--black-soft);
+}
+
+.modal-sqm-price {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.modal-prop-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* -----------------------------------------------
+   TABLET  768px+
+----------------------------------------------- */
+@media (min-width: 768px) {
+  .properties-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .property-card-body {
+    padding: 18px;
+  }
+
+  .property-card-name {
+    font-size: 1.18rem;
+    margin-bottom: 5px;
+  }
+
+  .property-card-location {
+    font-size: 0.76rem;
+    margin-bottom: 14px;
+  }
+
+  .property-card-price-row {
+    margin-bottom: 14px;
+  }
+
+  .property-card-price {
+    font-size: 1.3rem;
+  }
+
+  .property-card-meta {
+    gap: 10px;
+    padding-top: 14px;
+    margin-bottom: 16px;
+  }
+
+  .property-meta-tag {
+    font-size: 0.72rem;
+    gap: 4px;
+  }
+
+  .property-card-actions {
+    gap: 10px;
+  }
+
+  .property-card-actions .btn {
+    flex: 1 1 140px;
+    min-width: 120px;
+    font-size: 0.76rem;
+    padding: 10px 12px;
+  }
+}
+
+/* -----------------------------------------------
+   DESKTOP  1024px+
+----------------------------------------------- */
+@media (min-width: 1024px) {
+  .properties-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .property-card-img-placeholder {
+    min-height: 190px;
+  }
+
+  .modal-prop-actions {
+    flex-direction: row;
+  }
+}
