@@ -1,2 +1,0 @@
-# WealthSpring-Properties
-# wealthspring
