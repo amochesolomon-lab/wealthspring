@@ -26,10 +26,20 @@ Where Quality Meets Comfort.
         <link rel="stylesheet" href="css/properties.css" />
         <link rel="stylesheet" href="css/spring-ai.css" />
         <link rel="stylesheet" href="css/sections.css" />
+
+        <!-- Preload hero videos for faster playback -->
+        <link rel="preload" href="assets/videos/video1.mp4" as="video" type="video/mp4">
+        <link rel="preload" href="assets/videos/video2.mp4" as="video" type="video/mp4">
+        <link rel="preload" href="assets/videos/video3.mp4" as="video" type="video/mp4">
+        <link rel="preload" href="assets/videos/video4.mp4" as="video" type="video/mp4">
+        <link rel="preload" href="assets/videos/video5.mp4" as="video" type="video/mp4">
+
+        <!-- Defer main.js to improve initial page load performance -->
+        <script src="js/main.js" defer></script>
     </head>
     <body>
         <!-- ================================================
-     3 NAVBAR
+     NAVBAR
 ================================================ -->
         <nav id="navbar" role="navigation" aria-label="Main navigation">
             <div class="nav-inner">
@@ -1180,69 +1190,6 @@ Where Quality Meets Comfort.
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // --- 1. EMAIL FORM HANDLER ---
-            const contactForm = document.getElementById('contact-form');
-            
-            contactForm.addEventListener('submit', function(e) {
-                // Prevent the browser from handling it messily
-                e.preventDefault(); 
-
-                // Get form values
-                const firstName = document.getElementById('first-name').value.trim();
-                const lastName = document.getElementById('last-name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const selectEl = document.getElementById('interest');
-                const interestText = selectEl.options[selectEl.selectedIndex].text;
-                const message = document.getElementById('message').value.trim();
-
-                // Validation checkpoint
-                if(!firstName || !email || !message) {
-                    alert('Please fill out your Name, Email, and Message before sending.');
-                    return;
-                }
-
-                // Target Email Config (Change this to your actual company email)
-                const businessEmail = "wealthspring@example.com"; 
-                
-                // Construct Subject
-                const emailSubject = encodeURIComponent(`WealthSpring Inquiry: ${interestText}`);
-
-                // Construct Clean Body
-                const emailBody = `New client lead generated from WealthSpring website:
-
-Client Name: ${firstName} ${lastName}
-Email Address: ${email}
-Phone Number: ${phone}
-Interest Type: ${interestText}
-
-Client Message:
-------------------------------------------
-${message}
-------------------------------------------`;
-
-                // Fire up native Mail Application
-                window.location.href = `mailto:${businessEmail}?subject=${emailSubject}&body=${encodeURIComponent(emailBody)}`;
-            });
-
-
-            // --- 2. WHATSAPP BUTTON HANDLER ---
-            const whatsappBtn = document.getElementById('whatsapp-btn');
-            
-            whatsappBtn.addEventListener('click', function() {
-                // Primary real estate phone target (stripped of spaces)
-                const whatsappPhone = "2347068086845"; 
-                const defaultText = encodeURIComponent("Hello WealthSpring! I'm visiting your website and I'd like to make a general inquiry about your available land plots.");
-                
-                // Opens WhatsApp Web/App cleanly 
-                window.open(`https://wa.me/${whatsappPhone}?text=${defaultText}`, '_blank');
-            });
-
-        });
-    </script>
 </section>
 
         <!-- ================================================
@@ -1377,6 +1324,5 @@ ${message}
             </svg>
         </button>
 
-        <script src="js/main.js"></script>
     </body>
 </html>

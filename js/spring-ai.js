@@ -6,8 +6,8 @@
    2. Falls back to Groq via Cloudflare Worker (smart)
 ----------------------------------------------- */
 
-// ⚠️ REPLACE THIS with your Cloudflare Worker URL after deployment
-var WORKER_URL = 'https://crimson-dawn-e3da.theseraphicd3signer.workers.dev/';
+// Vercel Serverless Function URL (relative path for same-origin calls)
+var WORKER_URL = '/api/chat'; // This will call the api/chat.js endpoint on Vercel
 
 var messagesArea    = document.getElementById('chat-messages');
 var quickRepliesBar = document.getElementById('quick-replies-bar');
