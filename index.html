@@ -14,6 +14,7 @@ Where Quality Meets Comfort.
   Premium land investments in FCT Abuja, Nigeria."
         />
         <title>WealthSpring Properties</title>
+        <link rel="icon" type="image/png" href="assets/images/about-removebg-preview (Edited).png">
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,6 +52,7 @@ Where Quality Meets Comfort.
                     <a href="#properties" role="menuitem"
                         >City &amp; Properties</a
                     >
+                    <a href="properties.html" role="menuitem">All Properties</a>
                     <a href="#contact" role="menuitem">Schedule Inspection</a>
                     <a href="#contact" role="menuitem">Contact</a>
                 </div>
@@ -372,7 +374,7 @@ Where Quality Meets Comfort.
                     </div>
 
                     <div class="about-actions">
-                        <a href="#properties" class="btn btn-gold btn-cta"
+                        <a href="properties.html" class="btn btn-gold btn-cta"
                             >Explore Properties</a
                         >
                         <button class="btn btn-outline-gold" data-wa="general">
@@ -525,7 +527,7 @@ Where Quality Meets Comfort.
                                 <span class="property-meta-tag"
                                     >Documented</span
                                 >
-                            </div>
+                            </div><a href="properties.html" role="menuitem">All Properties</a>
                             <div class="property-card-actions">
                                 <button class="btn btn-gold">
                                     View Details
@@ -1029,159 +1031,219 @@ Where Quality Meets Comfort.
             </div>
         </section>
 
-        <!-- ================================================
-     CONTACT
-================================================ -->
-        <section id="contact" class="section">
-            <div class="section-inner contact-inner">
-                <!-- Info -->
-                <div class="contact-info fade-up">
-                    <span class="section-label">Get in Touch</span>
-                    <h2 class="contact-title">
-                        Let's Find Your<br />
-                        <em>Perfect Plot</em>
-                    </h2>
-                    <div class="gold-line"></div>
+       <section id="contact" class="section">
+    <div class="section-inner contact-inner">
+        <div class="contact-info fade-up">
+            <span class="section-label">Get in Touch</span>
+            <h2 class="contact-title">
+                Let's Find Your<br />
+                <em>Perfect Plot</em>
+            </h2>
+            <div class="gold-line"></div>
 
-                    <p class="contact-body">
-                        Ready to take the next step? Whether you want to
-                        schedule an inspection, ask a question, or simply learn
-                        more — our team is always available.
-                    </p>
+            <p class="contact-body">
+                Ready to take the next step? Whether you want to
+                schedule an inspection, ask a question, or simply learn
+                more — our team is always available.
+            </p>
 
-                    <div class="contact-wa-block">
-                        <p>Fastest response guaranteed on WhatsApp</p>
-                        <button
-                            class="btn btn-whatsapp btn-full"
-                            data-wa="general"
-                        >
-                            <svg
-                                class="wa-icon"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
-                                />
-                                <path
-                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
-                                />
-                            </svg>
-                            Chat on WhatsApp
-                        </button>
+            <div class="contact-wa-block">
+                <p>Fastest response guaranteed on WhatsApp</p>
+                <button
+                    id="whatsapp-btn"
+                    class="btn btn-whatsapp btn-full"
+                    data-wa="general"
+                >
+                    <svg
+                        class="wa-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                        />
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+                        />
+                    </svg>
+                    Chat on WhatsApp
+                </button>
+            </div>
+
+            <div class="contact-details">
+                <div class="contact-detail">
+                    <div class="contact-detail-icon" aria-hidden="true">
+                        &#9742;
                     </div>
-
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon" aria-hidden="true">
-                                &#9742;
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Phone / WhatsApp</strong>
-                                <span>+234 706 808 6845</span>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon" aria-hidden="true">
-                                &#9679;
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Location</strong>
-                                <span>FCT Abuja, Nigeria</span>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon" aria-hidden="true">
-                                &#9711;
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Working Hours</strong>
-                                <span>Monday to Friday, 8:00am to 5:00pm</span>
-                            </div>
-                        </div>
+                    <div class="contact-detail-text">
+                        <strong>Phone / WhatsApp</strong>
+                        <span>+234 706 808 6845, +234 704 239 3094 </span>
                     </div>
                 </div>
-
-                <!-- Form -->
-                <div class="contact-form-wrap fade-up">
-                    <h3 class="contact-form-title">Send Us a Message</h3>
-                    <form id="contact-form" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first-name">First Name</label>
-                                <input
-                                    type="text"
-                                    id="first-name"
-                                    name="first_name"
-                                    placeholder="Wealth"
-                                    autocomplete="given-name"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="last-name">Last Name</label>
-                                <input
-                                    type="text"
-                                    id="last-name"
-                                    name="last_name"
-                                    placeholder="Spring"
-                                    autocomplete="family-name"
-                                />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="wealthspring@example.com"
-                                autocomplete="email"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                placeholder="+234 800 000 0000"
-                                autocomplete="tel"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="interest">I am Interested In</label>
-                            <select id="interest" name="interest">
-                                <option value="" disabled selected>
-                                    Select an option
-                                </option>
-                                <option value="buying">Buying a Plot</option>
-                                <option value="inspection">
-                                    Scheduling an Inspection
-                                </option>
-                                <option value="payment">
-                                    Payment Plan Information
-                                </option>
-                                <option value="documentation">
-                                    Property Documentation
-                                </option>
-                                <option value="general">General Enquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                placeholder="Tell us what you are looking for or ask us anything"
-                            ></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-gold btn-full">
-                            Send Message
-                        </button>
-                    </form>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon" aria-hidden="true">
+                        &#9679;
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Location</strong>
+                        <span>FCT Abuja, Nigeria</span>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon" aria-hidden="true">
+                        &#9711;
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Working Hours</strong>
+                        <span>Monday to Friday, 7:00am to 5:00pm</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <div class="contact-form-wrap fade-up">
+            <h3 class="contact-form-title">Send Us a Message</h3>
+            <form id="contact-form" action="mailto:wealthspring@example.com" method="GET" enctype="text/plain" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input
+                            type="text"
+                            id="first-name"
+                            name="first_name"
+                            placeholder="Wealth"
+                            autocomplete="given-name"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input
+                            type="text"
+                            id="last-name"
+                            name="last_name"
+                            placeholder="Spring"
+                            autocomplete="family-name"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="wealthspring@example.com"
+                        autocomplete="email"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+234 800 000 0000"
+                        autocomplete="tel"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="interest">I am Interested In</label>
+                    <select id="interest" name="interest">
+                        <option value="" disabled selected>
+                            Select an option
+                        </option>
+                        <option value="buying">Buying a Plot</option>
+                        <option value="inspection">
+                            Scheduling an Inspection
+                        </option>
+                        <option value="payment">
+                            Payment Plan Information
+                        </option>
+                        <option value="documentation">
+                            Property Documentation
+                        </option>
+                        <option value="general">General Enquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us what you are looking for or ask us anything"
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold btn-full">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. EMAIL FORM HANDLER ---
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                // Prevent the browser from handling it messily
+                e.preventDefault(); 
+
+                // Get form values
+                const firstName = document.getElementById('first-name').value.trim();
+                const lastName = document.getElementById('last-name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const selectEl = document.getElementById('interest');
+                const interestText = selectEl.options[selectEl.selectedIndex].text;
+                const message = document.getElementById('message').value.trim();
+
+                // Validation checkpoint
+                if(!firstName || !email || !message) {
+                    alert('Please fill out your Name, Email, and Message before sending.');
+                    return;
+                }
+
+                // Target Email Config (Change this to your actual company email)
+                const businessEmail = "wealthspring@example.com"; 
+                
+                // Construct Subject
+                const emailSubject = encodeURIComponent(`WealthSpring Inquiry: ${interestText}`);
+
+                // Construct Clean Body
+                const emailBody = `New client lead generated from WealthSpring website:
+
+Client Name: ${firstName} ${lastName}
+Email Address: ${email}
+Phone Number: ${phone}
+Interest Type: ${interestText}
+
+Client Message:
+------------------------------------------
+${message}
+------------------------------------------`;
+
+                // Fire up native Mail Application
+                window.location.href = `mailto:${businessEmail}?subject=${emailSubject}&body=${encodeURIComponent(emailBody)}`;
+            });
+
+
+            // --- 2. WHATSAPP BUTTON HANDLER ---
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            
+            whatsappBtn.addEventListener('click', function() {
+                // Primary real estate phone target (stripped of spaces)
+                const whatsappPhone = "2347068086845"; 
+                const defaultText = encodeURIComponent("Hello WealthSpring! I'm visiting your website and I'd like to make a general inquiry about your available land plots.");
+                
+                // Opens WhatsApp Web/App cleanly 
+                window.open(`https://wa.me/${whatsappPhone}?text=${defaultText}`, '_blank');
+            });
+
+        });
+    </script>
+</section>
 
         <!-- ================================================
      FOOTER
