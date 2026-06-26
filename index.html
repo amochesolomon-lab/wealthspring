@@ -1,866 +1,1320 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="description" content="WealthSpring Properties — 
-Where Quality Meets Comfort. 
-  Premium land investments in FCT Abuja, Nigeria." />
-  <title>WealthSpring Properties</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <meta
+            name="description"
+            content="WealthSpring Properties —
+Where Quality Meets Comfort.
+  Premium land investments in FCT Abuja, Nigeria."
+        />
+        <title>WealthSpring Properties</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/about.css" />
-  <link rel="stylesheet" href="css/properties.css" />
-  <link rel="stylesheet" href="css/spring-ai.css" />
-  <link rel="stylesheet" href="css/sections.css" />
-</head>
-<body>
-
-
-<!-- ================================================
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/hero.css" />
+        <link rel="stylesheet" href="css/about.css" />
+        <link rel="stylesheet" href="css/properties.css" />
+        <link rel="stylesheet" href="css/spring-ai.css" />
+        <link rel="stylesheet" href="css/sections.css" />
+    </head>
+    <body>
+        <!-- ================================================
      3 NAVBAR
 ================================================ -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
+        <nav id="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-inner">
+                <!-- Brand -->
+                <a
+                    href="index.html"
+                    class="nav-brand"
+                    aria-label="WealthSpring Properties — Home"
+                >
+                    <img
+                        src="assets/logo/Wealthspring Logo.png"
+                        alt="WealthSpring Properties"
+                        class="nav-logo-img"
+                    />
+                </a>
 
-    <!-- Brand -->
-    <a href="index.html" class="nav-brand" aria-label="WealthSpring Properties — Home">
-    
-      <img src="assets/logo/Wealthspring Logo.png" alt="WealthSpring Properties" class="nav-logo-img" />
-    </a>
+                <!-- Desktop links -->
+                <div class="nav-links-desktop" role="menubar">
+                    <a href="#about" role="menuitem">About</a>
+                    <a href="#properties" role="menuitem"
+                        >City &amp; Properties</a
+                    >
+                    <a href="#contact" role="menuitem">Schedule Inspection</a>
+                    <a href="#contact" role="menuitem">Contact</a>
+                </div>
 
-    <!-- Desktop links -->
-    <div class="nav-links-desktop" role="menubar">
-      <a href="#about"      role="menuitem">About</a>
-      <a href="#properties" role="menuitem">City &amp; Properties</a>
-      <a href="#contact"    role="menuitem">Schedule Inspection</a>
-      <a href="#contact"    role="menuitem">Contact</a>
-    </div>
+                <!-- Desktop CTA -->
+                <div class="nav-desktop-cta">
+                    <a
+                        href="spring-ai.html"
+                        class="btn btn-spring-ai"
+                        style="
+                            padding: 10px 16px;
+                            font-size: 0.76rem;
+                            margin-right: 8px;
+                        "
+                    >
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="margin-right: 6px"
+                        >
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z"
+                                fill="currentColor"
+                            />
+                        </svg>
+                        SpringAI
+                    </a>
+                    <button
+                        class="btn btn-whatsapp btn-cta"
+                        data-wa="general"
+                        style="padding: 10px 20px; font-size: 0.76rem"
+                    >
+                        <svg
+                            class="wa-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                            />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+                            />
+                        </svg>
+                        WhatsApp Us
+                    </button>
+                </div>
 
-    <!-- Desktop CTA -->
-    <div class="nav-desktop-cta">
-      <a href="spring-ai.html" class="btn btn-spring-ai" style="padding: 10px 16px; font-size: 0.76rem; margin-right: 8px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 6px;">
-          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z" fill="currentColor"/>
-        </svg>
-        SpringAI
-      </a>
-      <button class="btn btn-whatsapp btn-cta" data-wa="general" style="padding: 10px 20px; font-size: 0.76rem;">
-        <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
-        </svg>
-        WhatsApp Us
-      </button>
-    </div>
+                <!-- Mobile hamburger -->
+                <button
+                    class="nav-hamburger"
+                    id="hamburger"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-drawer"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
 
-    <!-- Mobile hamburger -->
-    <button
-      class="nav-hamburger"
-      id="hamburger"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="nav-drawer"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+        <!-- Mobile drawer -->
+        <div class="nav-drawer" id="nav-drawer" aria-label="Navigation menu">
+            <nav class="nav-drawer-links">
+                <a href="#about" class="nav-drawer-link"
+                    >About <span class="link-arrow">&#8594;</span></a
+                >
+                <a href="#properties" class="nav-drawer-link"
+                    >City &amp; Properties
+                    <span class="link-arrow">&#8594;</span></a
+                >
+                <a href="#spring-ai" class="nav-drawer-link"
+                    >SpringAI <span class="link-arrow">&#8594;</span></a
+                >
+                <a href="#contact" class="nav-drawer-link"
+                    >Schedule Inspection
+                    <span class="link-arrow">&#8594;</span></a
+                >
+                <a href="#contact" class="nav-drawer-link"
+                    >Contact <span class="link-arrow">&#8594;</span></a
+                >
+            </nav>
+            <div class="nav-drawer-actions">
+                <a href="spring-ai.html" class="btn btn-spring-ai btn-full">
+                    <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style="margin-right: 8px"
+                    >
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                    Chat with SpringAI
+                </a>
+                <button class="btn btn-gold btn-full" data-wa="inspection">
+                    Schedule an Inspection
+                </button>
+                <button
+                    class="btn btn-whatsapp btn-full btn-cta"
+                    data-wa="general"
+                >
+                    <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                        />
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+                        />
+                    </svg>
+                    WhatsApp Us
+                </button>
+            </div>
+            <div class="nav-drawer-foot">
+                <p>Where Quality Meets Comfort</p>
+            </div>
+        </div>
 
-  </div>
-</nav>
-
-
-<!-- Mobile drawer -->
-<div class="nav-drawer" id="nav-drawer" aria-label="Navigation menu">
-  <nav class="nav-drawer-links">
-    <a href="#about"      class="nav-drawer-link">About <span class="link-arrow">&#8594;</span></a>
-    <a href="#properties" class="nav-drawer-link">City &amp; Properties <span class="link-arrow">&#8594;</span></a>
-    <a href="#spring-ai"  class="nav-drawer-link">SpringAI <span class="link-arrow">&#8594;</span></a>
-    <a href="#contact"    class="nav-drawer-link">Schedule Inspection <span class="link-arrow">&#8594;</span></a>
-    <a href="#contact"    class="nav-drawer-link">Contact <span class="link-arrow">&#8594;</span></a>
-  </nav>
-  <div class="nav-drawer-actions">
-    <a href="spring-ai.html" class="btn btn-spring-ai btn-full">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-        <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.05 1.05 4.42L2.05 21.95c-.03.18.05.37.21.51.17.14.39.21.62.17l5.53-1.05C9.95 21.64 10.97 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 13h2v2h-2v-2zm0-8h2v6h-2V7z" fill="currentColor"/>
-      </svg>
-      Chat with SpringAI
-    </a>
-    <button class="btn btn-gold btn-full" data-wa="inspection">Schedule an Inspection</button>
-    <button class="btn btn-whatsapp btn-full btn-cta" data-wa="general">
-      <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
-      </svg>
-      WhatsApp Us
-    </button>
-  </div>
-  <div class="nav-drawer-foot">
-    <p>Where Quality Meets Comfort</p>
-  </div>
-</div>
-
-
-<!-- ================================================
+        <!-- ================================================
      HERO
 ================================================ -->
-<section id="hero" aria-label="Hero">
+        <section id="hero" aria-label="Hero">
+            <!-- Video background layer -->
+            <div class="hero-video-layer" aria-hidden="true"></div>
 
-  <!-- Video background layer -->
-  <div class="hero-video-layer" aria-hidden="true"></div>
+            <video
+                class="hero-video"
+                src="assets/videos/video1.mp4"
+                muted
+                playsinline
+                preload="metadata"
+            ></video>
+            <video
+                class="hero-video"
+                src="assets/videos/video2.mp4"
+                muted
+                playsinline
+                preload="metadata"
+            ></video>
+            <video
+                class="hero-video"
+                src="assets/videos/video3.mp4"
+                muted
+                playsinline
+                preload="metadata"
+            ></video>
+            <video
+                class="hero-video"
+                src="assets/videos/video4.mp4"
+                muted
+                playsinline
+                preload="metadata"
+            ></video>
+            <video
+                class="hero-video"
+                src="assets/videos/video5.mp4"
+                muted
+                playsinline
+                preload="metadata"
+            ></video>
 
-      <video class="hero-video" src="assets/videos/video1.mp4" muted playsinline preload="metadata"></video>
-      <video class="hero-video" src="assets/videos/video2.mp4" muted playsinline preload="metadata"></video>
-      <video class="hero-video" src="assets/videos/video3.mp4" muted playsinline preload="metadata"></video>
-      <video class="hero-video" src="assets/videos/video4.mp4" muted playsinline preload="metadata"></video>
-      <video class="hero-video" src="assets/videos/video5.mp4" muted playsinline preload="metadata"></video>
+            <div class="hero-video-placeholder"></div>
 
-    <div class="hero-video-placeholder"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
 
-  <div class="hero-overlay" aria-hidden="true"></div>
+            <!-- Content -->
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+                    FCT Abuja, Nigeria
+                </div>
 
-  <!-- Content -->
-  <div class="hero-content">
+                <h1 class="hero-title">
+                    Premium Land<br />
+                    <em>Investments</em>
+                </h1>
 
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-      FCT Abuja, Nigeria
-    </div>
+                <p class="hero-tagline"><em>Where Quality Meets Comfort</em></p>
 
-    <h1 class="hero-title">
-      Premium Land<br>
-      <em>Investments</em>
-    </h1>
+                <div class="hero-divider" aria-hidden="true"></div>
 
-    <p class="hero-tagline"><em>Where Quality Meets Comfort</em></p>
+                <p class="hero-body">
+                    Verified, FCDA Approved, fully documented land properties in
+                    Abuja's most promising locations. Secure your future with
+                    confidence.
+                </p>
 
-    <div class="hero-divider" aria-hidden="true"></div>
+                <div class="hero-cta">
+                    <a href="#properties" class="btn btn-gold btn-cta"
+                        >View Properties</a
+                    >
+                    <button
+                        class="btn btn-outline-gold btn-cta"
+                        data-wa="inspection"
+                        style="
+                            border-color: rgba(255, 255, 255, 0.45);
+                            color: #fff;
+                        "
+                    >
+                        Schedule Inspection
+                    </button>
+                </div>
+            </div>
 
-    <p class="hero-body">
-      Verified, FCDA Approved, fully documented land properties in Abuja's most promising locations.
-      Secure your future with confidence.
-    </p>
+            <!-- Video progress indicators -->
+            <div class="hero-indicators" aria-hidden="true">
+                <div class="hero-indicator active">
+                    <div class="hero-indicator-fill"></div>
+                </div>
+                <div class="hero-indicator">
+                    <div class="hero-indicator-fill"></div>
+                </div>
+                <div class="hero-indicator">
+                    <div class="hero-indicator-fill"></div>
+                </div>
+                <div class="hero-indicator">
+                    <div class="hero-indicator-fill"></div>
+                </div>
+                <div class="hero-indicator">
+                    <div class="hero-indicator-fill"></div>
+                </div>
+            </div>
 
-    <div class="hero-cta">
-      <a href="#properties" class="btn btn-gold btn-cta">View Properties</a>
-      <button class="btn btn-outline-gold btn-cta" data-wa="inspection"
-        style="border-color: rgba(255,255,255,0.45); color: #fff;">
-        Schedule Inspection
-      </button>
-    </div>
+            <div class="hero-scroll-cue" aria-hidden="true">Scroll</div>
+        </section>
 
-  </div>
-
-  <!-- Video progress indicators -->
-  <div class="hero-indicators" aria-hidden="true">
-    <div class="hero-indicator active"><div class="hero-indicator-fill"></div></div>
-    <div class="hero-indicator"><div class="hero-indicator-fill"></div></div>
-    <div class="hero-indicator"><div class="hero-indicator-fill"></div></div>
-    <div class="hero-indicator"><div class="hero-indicator-fill"></div></div>
-    <div class="hero-indicator"><div class="hero-indicator-fill"></div></div>
-  </div>
-
-  <div class="hero-scroll-cue" aria-hidden="true">Scroll</div>
-
-</section>
-
-
-<!-- ================================================
+        <!-- ================================================
      ABOUT
 ================================================ -->
-<section id="about" class="section">
-  <div class="section-inner about-inner">
+        <section id="about" class="section">
+            <div class="section-inner about-inner">
+                <!-- Left: text -->
+                <div class="about-text fade-up">
+                    <span class="section-label">Who We Are</span>
 
-    <!-- Left: text -->
-    <div class="about-text fade-up">
+                    <h2 class="about-title">
+                        Built on Trust,<br />
+                        <em>Driven by Purpose</em>
+                    </h2>
 
-      <span class="section-label">Who We Are</span>
+                    <div class="gold-line"></div>
 
-      <h2 class="about-title">
-        Built on Trust,<br>
-        <em>Driven by Purpose</em>
-      </h2>
+                    <p class="about-body">
+                        WealthSpring Properties is a premium real estate company
+                        rooted in the heart of Abuja, Nigeria. We exist to close
+                        the gap between aspiring property owners and quality,
+                        verified land investments — making the journey to
+                        ownership seamless, transparent, and genuinely
+                        rewarding.
+                    </p>
 
-      <div class="gold-line"></div>
+                    <p class="about-body">
+                        Every plot we present has been physically inspected,
+                        legally verified, and strategically selected. Whether
+                        you are a first-time buyer looking to build a home or an
+                        investor growing a portfolio, WealthSpring is the
+                        partner you can trust to guide you from inquiry all the
+                        way to allocation.
+                    </p>
 
-      <p class="about-body">
-        WealthSpring Properties is a premium real estate company rooted in the heart of Abuja,
-        Nigeria. We exist to close the gap between aspiring property owners and quality,
-        verified land investments — making the journey to ownership seamless, transparent,
-        and genuinely rewarding.
-      </p>
+                    <div class="about-pillars">
+                        <div class="about-pillar">
+                            <div class="pillar-icon" aria-hidden="true">
+                                &#10022;
+                            </div>
+                            <div class="pillar-body">
+                                <strong>Verified Documentation</strong>
+                                <span
+                                    >C of O, Survey Plans and Government
+                                    Allocation on every plot.</span
+                                >
+                            </div>
+                        </div>
+                        <div class="about-pillar">
+                            <div class="pillar-icon" aria-hidden="true">
+                                &#9632;
+                            </div>
+                            <div class="pillar-body">
+                                <strong>Prime Locations</strong>
+                                <span
+                                    >Only high-growth corridors with road access
+                                    and infrastructure.</span
+                                >
+                            </div>
+                        </div>
+                        <div class="about-pillar">
+                            <div class="pillar-icon" aria-hidden="true">
+                                &#9671;
+                            </div>
+                            <div class="pillar-body">
+                                <strong>Client-First Service</strong>
+                                <span
+                                    >From inquiry to inspection to allocation —
+                                    we walk with you.</span
+                                >
+                            </div>
+                        </div>
+                        <div class="about-pillar">
+                            <div class="pillar-icon" aria-hidden="true">
+                                &#8593;
+                            </div>
+                            <div class="pillar-body">
+                                <strong>Investment Growth</strong>
+                                <span
+                                    >Properties priced for value appreciation as
+                                    Abuja expands.</span
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-      <p class="about-body">
-        Every plot we present has been physically inspected, legally verified, and
-        strategically selected. Whether you are a first-time buyer looking to build a home
-        or an investor growing a portfolio, WealthSpring is the partner you can trust to
-        guide you from inquiry all the way to allocation.
-      </p>
+                    <div class="about-actions">
+                        <a href="#properties" class="btn btn-gold btn-cta"
+                            >Explore Properties</a
+                        >
+                        <button class="btn btn-outline-gold" data-wa="general">
+                            Talk to Us
+                        </button>
+                    </div>
+                </div>
 
-      <div class="about-pillars">
-        <div class="about-pillar">
-          <div class="pillar-icon" aria-hidden="true">&#10022;</div>
-          <div class="pillar-body">
-            <strong>Verified Documentation</strong>
-            <span>C of O, Survey Plans and Government Allocation on every plot.</span>
-          </div>
-        </div>
-        <div class="about-pillar">  
-          <div class="pillar-icon" aria-hidden="true">&#9632;</div>
-          <div class="pillar-body">
-            <strong>Prime Locations</strong>
-            <span>Only high-growth corridors with road access and infrastructure.</span>
-          </div>
-        </div>
-        <div class="about-pillar">
-          <div class="pillar-icon" aria-hidden="true">&#9671;</div>
-          <div class="pillar-body">
-            <strong>Client-First Service</strong>
-            <span>From inquiry to inspection to allocation — we walk with you.</span>
-          </div>
-        </div>
-        <div class="about-pillar">
-          <div class="pillar-icon" aria-hidden="true">&#8593;</div>
-          <div class="pillar-body">
-            <strong>Investment Growth</strong>
-            <span>Properties priced for value appreciation as Abuja expands.</span>
-          </div>
-        </div>
-      </div>
+                <!-- Right: image -->
+                <div class="about-image-wrap fade-up">
+                    <img
+                        src="assets/images/about.png"
+                        alt="WealthSpring Properties — our team or site"
+                        class="about-img"
+                        style="
+                            width: 100%;
+                            border-radius: var(--radius-md);
+                            object-fit: cover;
+                        "
+                    />
+                    <div class="about-frame" aria-hidden="true"></div>
+                    <div class="about-stat-badge" aria-hidden="true">
+                        <span class="about-stat-badge-num">FCT</span>
+                        <span class="about-stat-badge-label">Abuja Based</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="about-actions">
-        <a href="#properties" class="btn btn-gold btn-cta">Explore Properties</a>
-        <button class="btn btn-outline-gold" data-wa="general">Talk to Us</button>
-      </div>
-
-    </div>
-
-    <!-- Right: image -->
-    <div class="about-image-wrap fade-up">
-
-       <img
-          src="assets/images/about.png"
-          alt="WealthSpring Properties — our team or site"
-          class="about-img"
-          style="width:100%; border-radius: var(--radius-md); object-fit:cover;"
-        />
-      <div class="about-frame" aria-hidden="true"></div>
-      <div class="about-stat-badge" aria-hidden="true">
-        <span class="about-stat-badge-num">FCT</span>
-        <span class="about-stat-badge-label">Abuja Based</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================================================
+        <!-- ================================================
      CITY AND PROPERTIES
 ================================================ -->
-<section id="properties" class="section">
-  <div class="section-inner">
+        <section id="properties" class="section">
+            <div class="section-inner">
+                <div class="properties-header fade-up">
+                    <span class="section-label">City &amp; Properties</span>
+                    <h2 class="properties-title">
+                        Operating in<br />
+                        <em>FCT Abuja</em>
+                    </h2>
+                    <div class="location-notice">
+                        <span class="location-notice-icon" aria-hidden="true"
+                            >&#9679;</span
+                        >
+                        <div>
+                            <strong
+                                >Federal Capital Territory (FCT), Abuja —
+                                Nigeria</strong
+                            >
+                            <span
+                                >Expanding to other major Nigerian cities very
+                                soon.</span
+                            >
+                        </div>
+                    </div>
+                </div>
 
-    <div class="properties-header fade-up">
-      <span class="section-label">City &amp; Properties</span>
-      <h2 class="properties-title">
-        Operating in<br>
-        <em>FCT Abuja</em>
-      </h2>
-      <div class="location-notice">
-        <span class="location-notice-icon" aria-hidden="true">&#9679;</span>
-        <div>
-          <strong>Federal Capital Territory (FCT), Abuja — Nigeria</strong>
-          <span>Expanding to other major Nigerian cities very soon.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Featured listings -->
-    <div class="properties-grid">
-
-      <!-- Card 1 -->
-      <article
-        class="property-card fade-up"
-        data-property="site-alpha"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Greenfield Estate Site Alpha"
-      >
-        <div class="property-card-img-wrap">
-          <!--
+                <!-- Featured listings -->
+                <div class="properties-grid">
+                    <!-- Card 1 -->
+                    <article
+                        class="property-card fade-up"
+                        data-property="site-alpha"
+                        role="button"
+                        tabindex="0"
+                        aria-label="View details for Greenfield Estate Site Alpha"
+                    >
+                        <div class="property-card-img-wrap">
+                            <!--
             Replace placeholder with:
             <img src="assets/images/properties/site-alpha.jpg" alt="Greenfield Estate" class="property-card-img" />
           -->
-          <img src="assets/images/properties/Wealthspring The Cove.png" alt="Greenfield Estate" class="property-card-img" />
-        </div>
+                            <img
+                                src="assets/images/properties/Wealthspring The Cove.png"
+                                alt="Greenfield Estate"
+                                class="property-card-img"
+                            />
+                        </div>
 
-        <div class="property-card-body">
-          <h3 class="property-card-name">The Cove</h3>
-          <p class="property-card-location">Katampe Extention, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;29M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>300</strong>&ndash;500 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Surveyed</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+                        <div class="property-card-body">
+                            <h3 class="property-card-name">The Cove</h3>
+                            <p class="property-card-location">
+                                Katampe Extention, FCT Abuja
+                            </p>
+                            <div class="property-card-price-row">
+                                <span class="property-card-price"
+                                    >From &#8358;29M</span
+                                >
+                                <span class="property-card-price-note"></span>
+                            </div>
+                            <div class="property-card-meta">
+                                <span class="property-meta-tag"
+                                    ><strong>300</strong>&ndash;500 SQM</span
+                                >
+                                <span class="property-meta-tag"
+                                    >FCDA Approved</span
+                                >
+                                <span class="property-meta-tag">Surveyed</span>
+                            </div>
+                            <div class="property-card-actions">
+                                <button class="btn btn-gold">
+                                    View Details
+                                </button>
+                                <button
+                                    class="btn btn-outline-gold"
+                                    data-wa="enquiry"
+                                >
+                                    WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </article>
 
-      <!-- Card 2 -->
-      <article
-        class="property-card fade-up"
-        data-property="site-beta"
-        role="button"
-        tabindex="0"
-        aria-label="View details for WealthSpring Courts Site Beta"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Wealthspring wealthcourt 6.png" alt="WealthSpring Courts" class="property-card-img" />
-          <span class="property-badge property-badge-dark">Hot Deal</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">WealthCourt</h3>
-          <p class="property-card-location">Phase 2 Kuje, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;2M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>200</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+                    <!-- Card 2 -->
+                    <article
+                        class="property-card fade-up"
+                        data-property="site-beta"
+                        role="button"
+                        tabindex="0"
+                        aria-label="View details for WealthSpring Courts Site Beta"
+                    >
+                        <div class="property-card-img-wrap">
+                            <img
+                                src="assets/images/properties/Wealthspring wealthcourt 6.png"
+                                alt="WealthSpring Courts"
+                                class="property-card-img"
+                            />
+                            <span class="property-badge property-badge-dark"
+                                >Hot Deal</span
+                            >
+                        </div>
+                        <div class="property-card-body">
+                            <h3 class="property-card-name">WealthCourt</h3>
+                            <p class="property-card-location">
+                                Phase 2 Kuje, FCT Abuja
+                            </p>
+                            <div class="property-card-price-row">
+                                <span class="property-card-price"
+                                    >From &#8358;2M</span
+                                >
+                                <span class="property-card-price-note"></span>
+                            </div>
+                            <div class="property-card-meta">
+                                <span class="property-meta-tag"
+                                    ><strong>200</strong>&ndash;1,000 SQM</span
+                                >
+                                <span class="property-meta-tag"
+                                    >FCDA Approved</span
+                                >
+                                <span class="property-meta-tag"
+                                    >Documented</span
+                                >
+                            </div>
+                            <div class="property-card-actions">
+                                <button class="btn btn-gold">
+                                    View Details
+                                </button>
+                                <button
+                                    class="btn btn-outline-gold"
+                                    data-wa="enquiry"
+                                >
+                                    WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </article>
 
-      <!-- Card 3 -->
-      <article
-        class="property-card fade-up"
-        data-property="site-gamma"
-        role="button"
-        tabindex="0"
-        aria-label="View details for Springview Gardens Site Gamma"
-      >
-        <div class="property-card-img-wrap">
-          <img src="assets/images/properties/Wealthspring Estora Residence UPDATED.png" alt="Estora Residence" class="property-card-img" />
-          <span class="property-badge property-badge-dark">New</span>
-        </div>
-        <div class="property-card-body">
-          <h3 class="property-card-name">Estora Residence</h3>
-          <p class="property-card-location">Maitama II, FCT Abuja</p>
-          <div class="property-card-price-row">
-            <span class="property-card-price">From &#8358;10M</span>
-            <span class="property-card-price-note"></span>
-          </div>
-          <div class="property-card-meta">
-            <span class="property-meta-tag"><strong>250</strong>&ndash;1,000 SQM</span>
-            <span class="property-meta-tag">FCDA Approved</span>
-            <span class="property-meta-tag">Documented</span>
-          </div>
-          <div class="property-card-actions">
-            <button class="btn btn-gold">View Details</button>
-            <button class="btn btn-outline-gold" data-wa="enquiry">WhatsApp</button>
-          </div>
-        </div>
-      </article>
+                    <!-- Card 3 -->
+                    <article
+                        class="property-card fade-up"
+                        data-property="site-gamma"
+                        role="button"
+                        tabindex="0"
+                        aria-label="View details for Springview Gardens Site Gamma"
+                    >
+                        <div class="property-card-img-wrap">
+                            <img
+                                src="assets/images/properties/Wealthspring Estora Residence UPDATED.png"
+                                alt="Estora Residence"
+                                class="property-card-img"
+                            />
+                            <span class="property-badge property-badge-dark"
+                                >New</span
+                            >
+                        </div>
+                        <div class="property-card-body">
+                            <h3 class="property-card-name">Estora Residence</h3>
+                            <p class="property-card-location">
+                                Maitama II, FCT Abuja
+                            </p>
+                            <div class="property-card-price-row">
+                                <span class="property-card-price"
+                                    >From &#8358;10M</span
+                                >
+                                <span class="property-card-price-note"></span>
+                            </div>
+                            <div class="property-card-meta">
+                                <span class="property-meta-tag"
+                                    ><strong>250</strong>&ndash;1,000 SQM</span
+                                >
+                                <span class="property-meta-tag"
+                                    >FCDA Approved</span
+                                >
+                                <span class="property-meta-tag"
+                                    >Documented</span
+                                >
+                            </div>
+                            <div class="property-card-actions">
+                                <button class="btn btn-gold">
+                                    View Details
+                                </button>
+                                <button
+                                    class="btn btn-outline-gold"
+                                    data-wa="enquiry"
+                                >
+                                    WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
-    </div>
+                <div class="properties-footer fade-up">
+                    <a href="properties.html" class="btn btn-outline-black"
+                        >View All Properties</a
+                    >
+                </div>
+            </div>
+        </section>
 
-    <div class="properties-footer fade-up">
-      <a href="properties.html" class="btn btn-outline-black">View All Properties</a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================================================
+        <!-- ================================================
      MEET SPRING AI
 ================================================ -->
-<section id="spring-ai" class="section">
-  <div class="section-inner spring-ai-inner fade-up">
+        <section id="spring-ai" class="section">
+            <div class="section-inner spring-ai-inner fade-up">
+                <!-- Left: Chat Preview -->
+                <div class="spring-ai-preview-col">
+                    <div class="spring-ai-preview">
+                        <div class="preview-header">
+                            <div class="preview-avatar" aria-hidden="true">
+                                S
+                            </div>
+                            <div class="preview-header-info">
+                                <strong>SpringAI</strong>
+                                <span class="preview-header-status">
+                                    <span
+                                        class="online-dot"
+                                        aria-hidden="true"
+                                    ></span>
+                                    Online — Always ready
+                                </span>
+                            </div>
+                        </div>
+                        <div class="preview-messages">
+                            <div class="preview-msg preview-msg-bot">
+                                Welcome to WealthSpring Properties,. How can I
+                                help you today?
+                            </div>
+                            <div class="preview-msg preview-msg-user">
+                                What plots are available in Kuje?
+                            </div>
+                            <div class="preview-msg preview-msg-bot">
+                                We have plots from 300 SQM to 1,000 SQM at
+                                WealthCourt,Phase 2 Kuje — starting at
+                                <strong>&#8358;2M</strong>. All plots are FCDA
+                                approved. Would you like more details?
+                            </div>
+                            <div
+                                class="preview-typing"
+                                aria-label="SpringAI is typing"
+                            >
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Left: Chat Preview -->
-    <div class="spring-ai-preview-col">
-      <div class="spring-ai-preview">
-        <div class="preview-header">
-          <div class="preview-avatar" aria-hidden="true">S</div>
-          <div class="preview-header-info">
-            <strong>SpringAI</strong>
-            <span class="preview-header-status">
-              <span class="online-dot" aria-hidden="true"></span>
-              Online — Always ready
-            </span>
-          </div>
-        </div>
-        <div class="preview-messages">
-          <div class="preview-msg preview-msg-bot">
-            Welcome to WealthSpring Properties,. How can I help you today?
-          </div>
-          <div class="preview-msg preview-msg-user">
-            What plots are available in Kuje?
-          </div>
-          <div class="preview-msg preview-msg-bot">
-            We have plots from 300 SQM to 1,000 SQM at WealthCourt,Phase 2 Kuje — starting at
-            <strong>&#8358;2M</strong>. All plots are FCDA approved. Would you like more details?
-          </div>
-          <div class="preview-typing" aria-label="SpringAI is typing">
-            <span></span><span></span><span></span>
-          </div>
-        </div>
-      </div>
-    </div>
+                <!-- Right: Information -->
+                <div class="spring-ai-info-col">
+                    <div class="spring-ai-tag">
+                        <span
+                            class="spring-ai-tag-dot"
+                            aria-hidden="true"
+                        ></span>
+                        COMING SOON!!
+                    </div>
 
-    <!-- Right: Information -->
-    <div class="spring-ai-info-col">
-      <div class="spring-ai-tag">
-        <span class="spring-ai-tag-dot" aria-hidden="true"></span>
-        COMING SOON!!
-      </div>
+                    <h2 class="spring-ai-title">Meet <em>SpringAI</em></h2>
 
-      <h2 class="spring-ai-title">
-        Meet <em>SpringAI</em>
-      </h2>
+                    <p class="spring-ai-body">
+                        Your intelligent property assistant, available around
+                        the clock. SpringAI answers questions about our
+                        listings, pricing, locations, and the buying process.
+                        For anything it cannot handle, it connects you directly
+                        to our team on WhatsApp. This Feature is currently still
+                        in development will be made available to the public when
+                        ready.
+                    </p>
 
-      <p class="spring-ai-body">
-        Your intelligent property assistant, available around the clock. SpringAI answers
-        questions about our listings, pricing, locations, and the buying process. For anything
-        it cannot handle, it connects you directly to our team on WhatsApp.
-        This Feature is currently still in development will be made available to the public
-        when ready.
-      </p>
+                    <!-- Feature chips -->
+                    <div class="spring-ai-chips">
+                        <span class="ai-chip">Property Information</span>
+                        <span class="ai-chip">Pricing and SQMs</span>
+                        <span class="ai-chip">Locations</span>
+                        <span class="ai-chip">Inspection Booking</span>
+                        <span class="ai-chip">WhatsApp Handoff</span>
+                    </div>
 
-      <!-- Feature chips -->
-      <div class="spring-ai-chips">
-        <span class="ai-chip">Property Information</span>
-        <span class="ai-chip">Pricing and SQMs</span>
-        <span class="ai-chip">Locations</span>
-        <span class="ai-chip">Inspection Booking</span>
-        <span class="ai-chip">WhatsApp Handoff</span>
-      </div>
+                    <!-- CTAs -->
+                    <div class="spring-ai-actions">
+                        <a
+                            href="#spring-ai"
+                            class="btn btn-gold"
+                            style="min-width: 200px"
+                        >
+                            Feature Coming Soon
+                        </a>
+                        <button
+                            class="btn btn-outline-gold"
+                            data-wa="general"
+                            style="
+                                border-color: rgba(201, 168, 76, 0.4);
+                                color: var(--gold-light);
+                                min-width: 200px;
+                            "
+                        >
+                            WhatsApp Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- CTAs -->
-      <div class="spring-ai-actions">
-        <a href="#spring-ai" class="btn btn-gold" style="min-width: 200px;">
-          Feature Coming Soon
-        </a>
-        <button
-          class="btn btn-outline-gold"
-          data-wa="general"
-          style="border-color: rgba(201,168,76,0.4); color: var(--gold-light); min-width: 200px;"
-        >
-          WhatsApp Us
-        </button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================================================
+        <!-- ================================================
      TESTIMONIALS
 ================================================ -->
-<section id="testimonials" class="section">
-  <div class="section-inner">
+        <section id="testimonials" class="section">
+            <div class="section-inner">
+                <div class="testimonials-header fade-up">
+                    <span class="section-label">Testimonials</span>
+                    <h2 class="testimonials-title">
+                        What Our <em>Clients Say</em>
+                    </h2>
+                    <div class="gold-line gold-line-center"></div>
+                </div>
 
-    <div class="testimonials-header fade-up">
-      <span class="section-label">Testimonials</span>
-      <h2 class="testimonials-title">What Our <em>Clients Say</em></h2>
-      <div class="gold-line gold-line-center"></div>
-    </div>
+                <div class="testimonials-scroll">
+                    <div class="testi-card fade-up">
+                        <span class="testi-quote-mark" aria-hidden="true"
+                            >&ldquo;</span
+                        >
+                        <p class="testi-text">
+                            WealthSpring made the whole process smooth and
+                            stress-free. I bought my plot in Karsana and the
+                            documentation was ready faster than I expected.
+                            Truly professional.
+                        </p>
+                        <div class="testi-stars" aria-label="5 out of 5 stars">
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                        </div>
+                        <div class="testi-author">
+                            <div class="testi-avatar" aria-hidden="true">
+                                AO
+                            </div>
+                            <div>
+                                <span class="testi-author-name"
+                                    >Adaeze Okonkwo</span
+                                >
+                                <span class="testi-author-role"
+                                    >Property Buyer, Abuja</span
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="testimonials-scroll">
+                    <div class="testi-card fade-up">
+                        <span class="testi-quote-mark" aria-hidden="true"
+                            >&ldquo;</span
+                        >
+                        <p class="testi-text">
+                            I was skeptical at first but the team was
+                            transparent at every stage. Visited the site,
+                            verified the documents, and closed the deal the same
+                            week.I Highly recommend WealthSpring Prperties.
+                        </p>
+                        <div class="testi-stars" aria-label="5 out of 5 stars">
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                        </div>
+                        <div class="testi-author">
+                            <div class="testi-avatar" aria-hidden="true">
+                                EB
+                            </div>
+                            <div>
+                                <span class="testi-author-name"
+                                    >Emmanuel Balogun</span
+                                >
+                                <span class="testi-author-role"
+                                    >Land Investor, Lagos</span
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="testi-card fade-up">
-        <span class="testi-quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="testi-text">
-          WealthSpring made the whole process smooth and stress-free. I bought my plot in
-          Karsana and the documentation was ready faster than I expected. Truly professional.
-        </p>
-        <div class="testi-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testi-author">
-          <div class="testi-avatar" aria-hidden="true">AO</div>
-          <div>
-            <span class="testi-author-name">Adaeze Okonkwo</span>
-            <span class="testi-author-role">Property Buyer, Abuja</span>
-          </div>
-        </div>
-      </div>
+                    <div class="testi-card fade-up">
+                        <span class="testi-quote-mark" aria-hidden="true"
+                            >&ldquo;</span
+                        >
+                        <p class="testi-text">
+                            Honestly, SpringAI answered all my initial questions
+                            about pricing and documentation before I even spoke
+                            to an agent. By the time I called, I was already
+                            ready to buy.
+                        </p>
+                        <div class="testi-stars" aria-label="5 out of 5 stars">
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                        </div>
+                        <div class="testi-author">
+                            <div class="testi-avatar" aria-hidden="true">
+                                FK
+                            </div>
+                            <div>
+                                <span class="testi-author-name"
+                                    >Fatima Kabir</span
+                                >
+                                <span class="testi-author-role"
+                                    >First-Time Buyer, Abuja</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="testi-card fade-up">
-        <span class="testi-quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="testi-text">
-          I was skeptical at first but the team was transparent at every stage. Visited the site,
-          verified the documents, and closed the deal the same week.I Highly recommend WealthSpring Prperties.
-        </p>
-        <div class="testi-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testi-author">
-          <div class="testi-avatar" aria-hidden="true">EB</div>
-          <div>
-            <span class="testi-author-name">Emmanuel Balogun</span>
-            <span class="testi-author-role">Land Investor, Lagos</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card fade-up">
-        <span class="testi-quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="testi-text">
-          Honestly, SpringAI answered all my initial questions about pricing and documentation before I
-          even spoke to an agent. By the time I called, I was already ready to buy.
-        </p>
-        <div class="testi-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testi-author">
-          <div class="testi-avatar" aria-hidden="true">FK</div>
-          <div>
-            <span class="testi-author-name">Fatima Kabir</span>
-            <span class="testi-author-role">First-Time Buyer, Abuja</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================================================
+        <!-- ================================================
      FAQ
 ================================================ -->
-<section id="faq" class="section">
-  <div class="section-inner">
+        <section id="faq" class="section">
+            <div class="section-inner">
+                <div class="faq-header fade-up">
+                    <span class="section-label">FAQ</span>
+                    <h2 class="faq-title">Common <em>Questions</em></h2>
+                    <div class="gold-line gold-line-center"></div>
+                </div>
 
-    <div class="faq-header fade-up">
-      <span class="section-label">FAQ</span>
-      <h2 class="faq-title">Common <em>Questions</em></h2>
-      <div class="gold-line gold-line-center"></div>
-    </div>
+                <div class="faq-list fade-up">
+                    <div class="faq-item open">
+                        <div
+                            class="faq-question"
+                            role="button"
+                            tabindex="0"
+                            aria-expanded="true"
+                        >
+                            <span class="faq-question-text"
+                                >Are your land properties legally
+                                documented?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="faq-answer-text">
+                                Yes. Every plot listed by WealthSpring
+                                Properties comes with verified documentation
+                                including Certificate of Occupancy (C of O),
+                                Survey Plans, and Government Allocation letters
+                                where applicable. We do not list undocumented
+                                land.
+                            </p>
+                            <div class="faq-answer-actions">
+                                <button class="btn btn-gold" data-wa="enquiry">
+                                    Ask on WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="faq-list fade-up">
+                    <div class="faq-item">
+                        <div
+                            class="faq-question"
+                            role="button"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question-text"
+                                >Where in Abuja do you currently operate?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="faq-answer-text">
+                                We currently have active listings in Gwarinpa,
+                                Kuje, Lugbe, and other growing districts within
+                                the FCT. We are actively expanding and will soon
+                                have listings in other major Nigerian cities.
+                            </p>
+                            <div class="faq-answer-actions">
+                                <a
+                                    href="#properties"
+                                    class="btn btn-outline-gold"
+                                    >View Listings</a
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="faq-item open">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="true">
-          <span class="faq-question-text">Are your land properties legally documented?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-answer">
-          <p class="faq-answer-text">
-            Yes. Every plot listed by WealthSpring Properties comes with verified documentation
-            including Certificate of Occupancy (C of O), Survey Plans, and Government Allocation
-            letters where applicable. We do not list undocumented land.
-          </p>
-          <div class="faq-answer-actions">
-            <button class="btn btn-gold" data-wa="enquiry">Ask on WhatsApp</button>
-          </div>
-        </div>
-      </div>
+                    <div class="faq-item">
+                        <div
+                            class="faq-question"
+                            role="button"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question-text"
+                                >Can I visit the site before making a
+                                purchase?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="faq-answer-text">
+                                Absolutely, and we strongly encourage it. You
+                                can schedule a free site inspection by
+                                contacting us through the website or on
+                                WhatsApp. Our team will accompany you to the
+                                property.
+                            </p>
+                            <div class="faq-answer-actions">
+                                <button
+                                    class="btn btn-gold btn-cta"
+                                    data-wa="inspection"
+                                >
+                                    Schedule Inspection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-          <span class="faq-question-text">Where in Abuja do you currently operate?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-answer">
-          <p class="faq-answer-text">
-            We currently have active listings in Gwarinpa, Kuje, Lugbe, and other growing
-            districts within the FCT. We are actively expanding and will soon have listings
-            in other major Nigerian cities.
-          </p>
-          <div class="faq-answer-actions">
-            <a href="#properties" class="btn btn-outline-gold">View Listings</a>
-          </div>
-        </div>
-      </div>
+                    <div class="faq-item">
+                        <div
+                            class="faq-question"
+                            role="button"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question-text"
+                                >What payment plans are available?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="faq-answer-text">
+                                We offer flexible payment options including
+                                outright payment with discounts and installment
+                                plans spread across agreed timelines. Contact us
+                                directly for a payment plan tailored to your
+                                situation.
+                            </p>
+                            <div class="faq-answer-actions">
+                                <button class="btn btn-gold" data-wa="enquiry">
+                                    Discuss Payment Plans
+                                </button>
+                                <a
+                                    href="spring-ai.html"
+                                    class="btn btn-outline-gold"
+                                    >Ask SpringAI</a
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-          <span class="faq-question-text">Can I visit the site before making a purchase?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-answer">
-          <p class="faq-answer-text">
-            Absolutely, and we strongly encourage it. You can schedule a free site inspection
-            by contacting us through the website or on WhatsApp. Our team will accompany you
-            to the property.
-          </p>
-          <div class="faq-answer-actions">
-            <button class="btn btn-gold btn-cta" data-wa="inspection">Schedule Inspection</button>
-          </div>
-        </div>
-      </div>
+                    <div class="faq-item">
+                        <div
+                            class="faq-question"
+                            role="button"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question-text"
+                                >How does the buying process work?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="faq-answer-text">
+                                The process is straightforward: browse and
+                                select a plot, schedule an inspection, agree on
+                                price and payment terms, make payment, then
+                                receive your allocation letter and full
+                                documentation. Our team guides you at every
+                                step.
+                            </p>
+                            <div class="faq-answer-actions">
+                                <button class="btn btn-gold" data-wa="general">
+                                    Get Started
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-          <span class="faq-question-text">What payment plans are available?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-answer">
-          <p class="faq-answer-text">
-            We offer flexible payment options including outright payment with discounts and
-            installment plans spread across agreed timelines. Contact us directly for a payment
-            plan tailored to your situation.
-          </p>
-          <div class="faq-answer-actions">
-            <button class="btn btn-gold" data-wa="enquiry">Discuss Payment Plans</button>
-            <a href="spring-ai.html" class="btn btn-outline-gold">Ask SpringAI</a>
-          </div>
-        </div>
-      </div>
+                    <div class="faq-item">
+                        <div
+                            class="faq-question"
+                            role="button"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question-text"
+                                >What is SpringAI and how does it help?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="faq-answer-text">
+                                SpringAI is WealthSpring's AI-powered chat
+                                assistant. It answers questions about our
+                                properties, pricing, locations, and the buying
+                                process at any time of day or night. For
+                                anything it does not have Clear Information
+                                about, it transfers you directly to our team on
+                                WhatsApp.
+                            </p>
+                            <div class="faq-answer-actions">
+                                <a href="spring-ai.html" class="btn btn-gold"
+                                    >Chat with SpringAI</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-          <span class="faq-question-text">How does the buying process work?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-answer">
-          <p class="faq-answer-text">
-            The process is straightforward: browse and select a plot, schedule an inspection,
-            agree on price and payment terms, make payment, then receive your allocation letter
-            and full documentation. Our team guides you at every step.
-          </p>
-          <div class="faq-answer-actions">
-            <button class="btn btn-gold" data-wa="general">Get Started</button>
-          </div>
-        </div>
-      </div>
+                <div class="faq-footer fade-up">
+                    <p>
+                        Still have a question? Our team is always ready to help.
+                    </p>
+                    <div class="faq-footer-actions">
+                        <button class="btn btn-whatsapp" data-wa="faq">
+                            <svg
+                                class="wa-icon"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                                />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+                                />
+                            </svg>
+                            WhatsApp Us
+                        </button>
+                        <!--<a href="spring-ai.html" class="btn btn-outline-gold">Ask SpringAI</a>-->
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-          <span class="faq-question-text">What is SpringAI and how does it help?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-answer">
-          <p class="faq-answer-text">
-            SpringAI is WealthSpring's AI-powered chat assistant. It answers questions about
-            our properties, pricing, locations, and the buying process at any time of day or
-            night. For anything it does not have Clear Information about, it transfers you directly to our team on WhatsApp.
-          </p>
-          <div class="faq-answer-actions">
-            <a href="spring-ai.html" class="btn btn-gold">Chat with SpringAI</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="faq-footer fade-up">
-      <p>Still have a question? Our team is always ready to help.</p>
-      <div class="faq-footer-actions">
-        <button class="btn btn-whatsapp" data-wa="faq">
-          <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
-          </svg>
-          WhatsApp Us
-        </button>
-        <!--<a href="spring-ai.html" class="btn btn-outline-gold">Ask SpringAI</a>-->
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================================================
+        <!-- ================================================
      CONTACT
 ================================================ -->
-<section id="contact" class="section">
-  <div class="section-inner contact-inner">
+        <section id="contact" class="section">
+            <div class="section-inner contact-inner">
+                <!-- Info -->
+                <div class="contact-info fade-up">
+                    <span class="section-label">Get in Touch</span>
+                    <h2 class="contact-title">
+                        Let's Find Your<br />
+                        <em>Perfect Plot</em>
+                    </h2>
+                    <div class="gold-line"></div>
 
-    <!-- Info -->
-    <div class="contact-info fade-up">
+                    <p class="contact-body">
+                        Ready to take the next step? Whether you want to
+                        schedule an inspection, ask a question, or simply learn
+                        more — our team is always available.
+                    </p>
 
-      <span class="section-label">Get in Touch</span>
-      <h2 class="contact-title">
-        Let's Find Your<br>
-        <em>Perfect Plot</em>
-      </h2>
-      <div class="gold-line"></div>
+                    <div class="contact-wa-block">
+                        <p>Fastest response guaranteed on WhatsApp</p>
+                        <button
+                            class="btn btn-whatsapp btn-full"
+                            data-wa="general"
+                        >
+                            <svg
+                                class="wa-icon"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                                />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+                                />
+                            </svg>
+                            Chat on WhatsApp
+                        </button>
+                    </div>
 
-      <p class="contact-body">
-        Ready to take the next step? Whether you want to schedule an inspection, ask a question,
-        or simply learn more — our team is always available.
-      </p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon" aria-hidden="true">
+                                &#9742;
+                            </div>
+                            <div class="contact-detail-text">
+                                <strong>Phone / WhatsApp</strong>
+                                <span>+234 706 808 6845</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon" aria-hidden="true">
+                                &#9679;
+                            </div>
+                            <div class="contact-detail-text">
+                                <strong>Location</strong>
+                                <span>FCT Abuja, Nigeria</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon" aria-hidden="true">
+                                &#9711;
+                            </div>
+                            <div class="contact-detail-text">
+                                <strong>Working Hours</strong>
+                                <span>Monday to Friday, 8:00am to 5:00pm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="contact-wa-block">
-        <p>Fastest response guaranteed on WhatsApp</p>
-        <button class="btn btn-whatsapp btn-full" data-wa="general">
-          <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
-          </svg>
-          Chat on WhatsApp
-        </button>
-      </div>
+                <!-- Form -->
+                <div class="contact-form-wrap fade-up">
+                    <h3 class="contact-form-title">Send Us a Message</h3>
+                    <form id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input
+                                    type="text"
+                                    id="first-name"
+                                    name="first_name"
+                                    placeholder="Wealth"
+                                    autocomplete="given-name"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input
+                                    type="text"
+                                    id="last-name"
+                                    name="last_name"
+                                    placeholder="Spring"
+                                    autocomplete="family-name"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="wealthspring@example.com"
+                                autocomplete="email"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+234 800 000 0000"
+                                autocomplete="tel"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I am Interested In</label>
+                            <select id="interest" name="interest">
+                                <option value="" disabled selected>
+                                    Select an option
+                                </option>
+                                <option value="buying">Buying a Plot</option>
+                                <option value="inspection">
+                                    Scheduling an Inspection
+                                </option>
+                                <option value="payment">
+                                    Payment Plan Information
+                                </option>
+                                <option value="documentation">
+                                    Property Documentation
+                                </option>
+                                <option value="general">General Enquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Tell us what you are looking for or ask us anything"
+                            ></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold btn-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-      <div class="contact-details">
-        <div class="contact-detail">
-          <div class="contact-detail-icon" aria-hidden="true">&#9742;</div>
-          <div class="contact-detail-text">
-            <strong>Phone / WhatsApp</strong>
-            <span>+234 706 808 6845</span>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon" aria-hidden="true">&#9679;</div>
-          <div class="contact-detail-text">
-            <strong>Location</strong>
-            <span>FCT Abuja, Nigeria</span>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon" aria-hidden="true">&#9711;</div>
-          <div class="contact-detail-text">
-            <strong>Working Hours</strong>
-            <span>Monday to Friday, 8:00am to 5:00pm</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Form -->
-    <div class="contact-form-wrap fade-up">
-      <h3 class="contact-form-title">Send Us a Message</h3>
-      <form id="contact-form" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first_name" placeholder="Wealth" autocomplete="given-name" />
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last_name" placeholder="Spring" autocomplete="family-name" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="wealthspring@example.com" autocomplete="email" />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000" autocomplete="tel" />
-        </div>
-        <div class="form-group">
-          <label for="interest">I am Interested In</label>
-          <select id="interest" name="interest">
-            <option value="" disabled selected>Select an option</option>
-            <option value="buying">Buying a Plot</option>
-            <option value="inspection">Scheduling an Inspection</option>
-            <option value="payment">Payment Plan Information</option>
-            <option value="documentation">Property Documentation</option>
-            <option value="general">General Enquiry</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us what you are looking for or ask us anything"></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold btn-full">Send Message</button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================================================
+        <!-- ================================================
      FOOTER
 ================================================ -->
-<footer id="footer" role="contentinfo">
+        <footer id="footer" role="contentinfo">
+            <div class="section-inner">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <div class="footer-brand-name">
+                            Wealth<span>Spring</span> Properties
+                        </div>
+                        <span class="footer-brand-tagline"
+                            >Where Quality Meets Comfort</span
+                        >
+                        <p class="footer-brand-text">
+                            Premium land investments in FCT Abuja, Nigeria.
+                            Verified, documented, and ready for your future.
+                        </p>
+                        <div class="footer-social">
+                            <a
+                                href="https://www.facebook.com/share/1JV5HAoUfK/"
+                                class="footer-social-link"
+                                aria-label="Facebook"
+                                >FB</a
+                            >
+                            <a
+                                href="https://www.instagram.com/abuja_realtestatepro?igsh=MW5jZThyNWFsanlvNA=="
+                                class="footer-social-link"
+                                aria-label="Instagram"
+                                >IG</a
+                            >
+                        </div>
+                    </div>
 
-  <div class="section-inner">
-    <div class="footer-inner">
+                    <div class="footer-links-grid">
+                        <div>
+                            <p class="footer-col-title">Quick Links</p>
+                            <ul class="footer-link-list">
+                                <li><a href="#about">About Us</a></li>
+                                <li>
+                                    <a href="#properties"
+                                        >City &amp; Properties</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="properties.html">All Properties</a>
+                                </li>
+                                <li><a href="spring-ai.html">SpringAI</a></li>
+                                <li><a href="#faq">FAQ</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="footer-col-title">Contact</p>
+                            <ul class="footer-link-list">
+                                <li>
+                                    <a href="tel:+2347068086845"
+                                        >+234 706 808 6845</a
+                                    >
+                                </li>
+                                <li>
+                                    <button data-wa="general">
+                                        WhatsApp Us
+                                    </button>
+                                </li>
+                                <li>
+                                    <a href="spring-ai.html"
+                                        >Chat with SpringAI</a
+                                    >
+                                </li>
+                                <li>
+                                    <span
+                                        style="
+                                            font-size: 0.8rem;
+                                            color: rgba(255, 255, 255, 0.35);
+                                        "
+                                        >FCT Abuja, Nigeria</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="footer-brand">
-        <div class="footer-brand-name">Wealth<span>Spring</span> Properties</div>
-        <span class="footer-brand-tagline">Where Quality Meets Comfort</span>
-        <p class="footer-brand-text">
-          Premium land investments in FCT Abuja, Nigeria. Verified, documented, and ready for
-          your future.
-        </p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/share/1JV5HAoUfK/" class="footer-social-link" aria-label="Facebook">FB</a>
-          <a href="https://www.instagram.com/abuja_realtestatepro?igsh=MW5jZThyNWFsanlvNA==" class="footer-social-link" aria-label="Instagram">IG</a>
-        </div>
-      </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 <span>WealthSpring Properties</span>. All
+                        rights reserved.
+                    </p>
+                    <p>Built with care in Abuja, Nigeria</p>
+                </div>
+            </div>
+        </footer>
 
-      <div class="footer-links-grid">
-        <div>
-          <p class="footer-col-title">Quick Links</p>
-          <ul class="footer-link-list">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#properties">City &amp; Properties</a></li>
-            <li><a href="properties.html">All Properties</a></li>
-            <li><a href="spring-ai.html">SpringAI</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">Contact</p>
-          <ul class="footer-link-list">
-            <li><a href="tel:+2347068086845">+234 706 808 6845</a></li>
-            <li><button data-wa="general">WhatsApp Us</button></li>
-            <li><a href="spring-ai.html">Chat with SpringAI</a></li>
-            <li><span style="font-size: 0.8rem; color: rgba(255,255,255,0.35);">FCT Abuja, Nigeria</span></li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 <span>WealthSpring Properties</span>. All rights reserved.</p>
-      <p>Built with care in Abuja, Nigeria</p>
-    </div>
-  </div>
-
-</footer>
-
-
-<!-- ================================================
+        <!-- ================================================
      PROPERTY MODAL
 ================================================ -->
-<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Property Details">
-  <div class="modal-box" id="modal-content">
-    <!-- Populated by main.js -->
-  </div>
-</div>
+        <div
+            class="modal-overlay"
+            id="modal-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Property Details"
+        >
+            <div class="modal-box" id="modal-content">
+                <!-- Populated by main.js -->
+            </div>
+        </div>
 
-
-<!-- ================================================
+        <!-- ================================================
      FLOATING WHATSAPP BUTTON
 ================================================ -->
-<button class="float-wa" data-wa="general" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
-  </svg>
-</button>
+        <button
+            class="float-wa"
+            data-wa="general"
+            aria-label="Chat on WhatsApp"
+        >
+            <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="white"
+                aria-hidden="true"
+            >
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.524 5.855L.057 23.243a.75.75 0 00.916.916l5.388-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.98 0-3.852-.538-5.464-1.48l-.39-.23-4.04 1.1 1.1-4.04-.23-.39A10.448 10.448 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"
+                />
+            </svg>
+        </button>
 
-
-<script src="js/main.js"></script>
-</body>
+        <script src="js/main.js"></script>
+    </body>
 </html>
