@@ -1,0 +1,18 @@
+{
+  "agents": {
+    "agent-1782508130958-o9d9ui": {
+      "agentId": "agent-1782508130958-o9d9ui",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "provider": "anthropic"
+      },
+      "createdAt": "2026-06-26T21:08:50.959Z",
+      "model": "sonnet",
+      "modelRoutedBy": "default"
+    }
+  },
+  "version": "3.0.0"
+}
