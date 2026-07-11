@@ -104,7 +104,7 @@ if (hamburger && navDrawer) {
   var current          = 0;
   var slideTimer       = null;
   var fadeTimer        = null;
-  var VIDEO_DURATIONS  = [15, 15, 15, 15, 15];
+  var VIDEO_DURATIONS  = [15, 15, 15, 15];
   var FADE_OUT_OFFSET  = 3;
 
   function clearSlideTimers() {

@@ -2,9 +2,8 @@
    WEALTHSPRING PROPERTIES
    Global Styles — Design System
    Mobile First
+   Fonts load via <link> in HTML (faster than @import)
    ============================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap');
 
 /* -----------------------------------------------
    CSS VARIABLES
@@ -30,16 +29,16 @@
 
   /* Typography */
   --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans:  'Outfit', sans-serif;
+  --sans:  'Outfit', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
-  --page-x:       20px;
-  --section-y:    72px;
-  --nav-height:   68px;
+  --page-x:       16px;
+  --section-y:    64px;
+  --nav-height:   64px;
 
   /* Effects */
   --ease:         cubic-bezier(0.4, 0, 0.2, 1);
-  --speed:        0.3s;
+  --speed:        0.25s;
   --shadow-sm:    0 2px 12px rgba(0,0,0,0.06);
   --shadow-md:    0 8px 32px rgba(0,0,0,0.10);
   --shadow-gold:  0 8px 28px rgba(201,168,76,0.22);
@@ -77,7 +76,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img,
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 video {
   display: block;
   max-width: 100%;
@@ -213,210 +217,96 @@ select {
 .btn-gold {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: var(--white);
-  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
-  animation: btnPulse 2s ease-in-out infinite;
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.28);
 }
 
 .btn-gold:hover {
   background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
-  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.4);
-  transform: translateY(-3px) scale(1.02);
-  animation: none;
-}
-
-@keyframes btnPulse {
-  0%, 100% { box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3); }
-  50% { box-shadow: 0 8px 28px rgba(201, 168, 76, 0.5); }
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.38);
+  transform: translateY(-2px);
 }
 
 .btn-outline-gold {
   background: transparent;
   color: var(--gold);
-  border: 2px solid var(--gold);
-  box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid var(--gold);
+  box-shadow: none;
+  transition: background var(--speed) var(--ease),
+              color var(--speed) var(--ease),
+              border-color var(--speed) var(--ease),
+              transform var(--speed) var(--ease);
 }
 
 .btn-outline-gold:hover {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: var(--white);
   border-color: var(--gold);
-  box-shadow: 0 0 0 8px rgba(201, 168, 76, 0.1);
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
 }
 
 .btn-black {
   background: linear-gradient(135deg, var(--black) 0%, var(--black-soft) 100%);
   color: var(--white);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .btn-black:hover {
   background: linear-gradient(135deg, var(--black-soft) 0%, var(--black) 100%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
 }
 
 .btn-outline-black {
   background: transparent;
   color: var(--black-soft);
-  border: 2px solid var(--black-soft);
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid var(--black-soft);
+  box-shadow: none;
+  transition: background var(--speed) var(--ease),
+              color var(--speed) var(--ease),
+              border-color var(--speed) var(--ease),
+              transform var(--speed) var(--ease);
 }
 
 .btn-outline-black:hover {
   background: linear-gradient(135deg, var(--black) 0%, var(--black-soft) 100%);
   color: var(--white);
   border-color: var(--black);
-  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
 }
 
 .btn-whatsapp {
   background: linear-gradient(135deg, var(--whatsapp) 0%, #1ebe5d 100%);
   color: var(--white);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-  animation: whatsappGlow 2.5s ease-in-out infinite;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
   position: relative;
-}
-
-.btn-whatsapp::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, var(--whatsapp), #25d366, #1ebe5d);
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  animation: whatsappRing 2.5s ease-in-out infinite;
 }
 
 .btn-whatsapp:hover {
   background: linear-gradient(135deg, #1ebe5d 0%, var(--whatsapp) 100%);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
-  transform: translateY(-3px) scale(1.02);
-  animation: none;
-}
-
-.btn-whatsapp:hover::after {
-  animation: whatsappRingHover 0.6s ease-out;
-}
-
-@keyframes whatsappGlow {
-  0%, 100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3); }
-  50% { box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5); }
-}
-
-@keyframes whatsappRing {
-  0%, 100% { opacity: 0; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.05); }
-}
-
-@keyframes whatsappRingHover {
-  0% { opacity: 0; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
-  100% { opacity: 0; transform: scale(1.05); }
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.38);
+  transform: translateY(-2px);
 }
 
 .btn-spring-ai {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: var(--white);
-  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
-  animation: springAiGlow 2.5s ease-in-out infinite;
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.28);
   position: relative;
-}
-
-.btn-spring-ai::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold-dark));
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  animation: springAiRing 2.5s ease-in-out infinite;
 }
 
 .btn-spring-ai:hover {
   background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
-  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.4);
-  transform: translateY(-3px) scale(1.02);
-  animation: none;
-}
-
-.btn-spring-ai:hover::after {
-  animation: springAiRingHover 0.6s ease-out;
-}
-
-@keyframes springAiGlow {
-  0%, 100% { box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3); }
-  50% { box-shadow: 0 8px 28px rgba(201, 168, 76, 0.5); }
-}
-
-@keyframes springAiRing {
-  0%, 100% { opacity: 0; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.05); }
-}
-
-@keyframes springAiRingHover {
-  0% { opacity: 0; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
-  100% { opacity: 0; transform: scale(1.05); }
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.38);
+  transform: translateY(-2px);
 }
 
 .btn-full {
   width: 100%;
 }
 
-/* Special CTA attention-grabber */
+/* CTA utility — no continuous animation (keeps main thread free) */
 .btn-cta {
   position: relative;
-  animation: ctaAttention 3s ease-in-out infinite;
-}
-
-.btn-cta::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold));
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  animation: ctaRing 3s ease-in-out infinite;
-}
-
-@keyframes ctaAttention {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-}
-
-@keyframes ctaRing {
-  0%, 100% { opacity: 0; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.02); }
-}
-
-.btn-cta:hover {
-  animation: none;
-}
-
-.btn-cta:hover::after {
-  animation: ctaRingHover 0.6s ease-out;
-}
-
-@keyframes ctaRingHover {
-  0% { opacity: 0; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.08); }
-  100% { opacity: 0; transform: scale(1.02); }
 }
 
 .wa-icon {
@@ -541,13 +431,41 @@ select {
 .serif       { font-family: var(--serif); }
 
 /* -----------------------------------------------
+   PERFORMANCE HELPERS
+----------------------------------------------- */
+.footer-address {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-up {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* -----------------------------------------------
    TABLET  768px+
 ----------------------------------------------- */
 @media (min-width: 768px) {
   :root {
-    --page-x:     40px;
-    --section-y:  96px;
-    --nav-height: 78px;
+    --page-x:     36px;
+    --section-y:  88px;
+    --nav-height: 72px;
   }
 
   .modal-overlay {
@@ -565,7 +483,8 @@ select {
 ----------------------------------------------- */
 @media (min-width: 1024px) {
   :root {
-    --page-x:    64px;
-    --section-y: 110px;
+    --page-x:    56px;
+    --section-y: 100px;
+    --nav-height: 78px;
   }
 }

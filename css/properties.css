@@ -81,15 +81,16 @@
 ----------------------------------------------- */
 .properties-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: 1fr;
+  gap: 16px;
   justify-items: stretch;
   align-items: stretch;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 520px) {
   .properties-grid {
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 }
 
@@ -109,6 +110,9 @@
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: transform var(--speed) var(--ease),
               box-shadow var(--speed) var(--ease),
               border-color var(--speed) var(--ease);
@@ -116,7 +120,7 @@
 }
 
 .property-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: var(--gold-light);
 }
@@ -125,42 +129,46 @@
 .property-card-img-wrap {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--gray-bg);
+  flex-shrink: 0;
+}
+
+.property-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s var(--ease);
+}
+
+.property-card:hover .property-card-img {
+  transform: scale(1.04);
 }
 
 .property-card-img-placeholder {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   min-height: 130px;
 }
-
-/*
-  When real images are added:
-  .property-card-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s var(--ease);
-  }
-  .property-card:hover .property-card-img {
-    transform: scale(1.04);
-  }
-*/
 
 /* Badge */
 .property-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   background: var(--gold);
   color: var(--white);
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 5px 11px;
+  padding: 5px 10px;
   border-radius: 30px;
+  z-index: 1;
 }
 
 .property-badge-dark {
@@ -169,24 +177,29 @@
 
 /* Card body */
 .property-card-body {
-  padding: 14px;
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 
 .property-card-name {
   font-family: var(--sans);
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 2.8vw, 1.15rem);
   font-weight: 700;
   color: var(--black-soft);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 4px;
 }
 
 .property-card-location {
   font-family: var(--sans);
-  font-size: 0.7rem;
-  font-weight: 300;
+  font-size: 0.72rem;
+  font-weight: 400;
   color: var(--gray-light);
   margin-bottom: 10px;
+  line-height: 1.35;
 }
 
 .property-card-price-row {
@@ -198,10 +211,10 @@
 
 .property-card-price {
   font-family: var(--sans);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: 700;
   color: var(--gold);
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .property-card-price-note {
@@ -214,10 +227,11 @@
 .property-card-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px 10px;
   padding-top: 10px;
   border-top: 1px solid var(--gray-border);
   margin-bottom: 12px;
+  margin-top: auto;
 }
 
 .property-meta-tag {
@@ -225,9 +239,10 @@
   font-size: 0.65rem;
   font-weight: 400;
   color: var(--gray-mid);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 3px;
+  line-height: 1.3;
 }
 
 .property-meta-tag strong {
@@ -237,16 +252,17 @@
 
 .property-card-actions {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
 }
 
 .property-card-actions .btn {
-  flex: 1 1 80px;
-  min-width: 70px;
-  font-size: 0.7rem;
-  padding: 8px 10px;
-  white-space: normal;
+  flex: 1 1 auto;
+  width: 100%;
+  font-size: 0.72rem;
+  padding: 10px 12px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  box-shadow: none;
 }
 
 /* -----------------------------------------------
@@ -354,48 +370,45 @@
     gap: 20px;
   }
 
+  .property-card-img-wrap {
+    aspect-ratio: 16 / 10;
+  }
+
   .property-card-body {
     padding: 18px;
   }
 
   .property-card-name {
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     margin-bottom: 5px;
   }
 
   .property-card-location {
     font-size: 0.76rem;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .property-card-price-row {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .property-card-price {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .property-card-meta {
-    gap: 10px;
-    padding-top: 14px;
-    margin-bottom: 16px;
+    gap: 8px 12px;
+    padding-top: 12px;
+    margin-bottom: 14px;
   }
 
   .property-meta-tag {
     font-size: 0.72rem;
-    gap: 4px;
-  }
-
-  .property-card-actions {
-    gap: 10px;
   }
 
   .property-card-actions .btn {
-    flex: 1 1 140px;
-    min-width: 120px;
     font-size: 0.76rem;
-    padding: 10px 12px;
+    padding: 11px 14px;
   }
 }
 
@@ -408,8 +421,8 @@
     gap: 24px;
   }
 
-  .property-card-img-placeholder {
-    min-height: 190px;
+  .property-card-img-wrap {
+    aspect-ratio: 16 / 11;
   }
 
   .modal-prop-actions {

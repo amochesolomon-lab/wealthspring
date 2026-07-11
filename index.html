@@ -9,15 +9,21 @@
         <meta name="theme-color" content="#ffffff" />
         <meta
             name="description"
-            content="WealthSpring Properties —
-Where Quality Meets Comfort.
-  Premium land investments in FCT Abuja, Nigeria."
+            content="WealthSpring Properties — Where Quality Meets Comfort. Premium land investments in FCT Abuja, Nigeria."
         />
         <title>WealthSpring Properties</title>
-        <link rel="icon" type="image/png" href="assets/images/about-removebg-preview (Edited).png">
+        <link
+            rel="icon"
+            type="image/png"
+            href="assets/images/about-removebg-preview%20(Edited).png"
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        />
 
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/navbar.css" />
@@ -202,22 +208,21 @@ Where Quality Meets Comfort.
                 src="assets/videos/video2.mp4"
                 muted
                 playsinline
-                preload="metadata"
+                preload="none"
             ></video>
             <video
                 class="hero-video"
                 src="assets/videos/video3.mp4"
                 muted
                 playsinline
-                preload="metadata"
+                preload="none"
             ></video>
-            <!-- video4.mp4 omitted: large file not shipped with deploy -->
             <video
                 class="hero-video"
                 src="assets/videos/video5.mp4"
                 muted
                 playsinline
-                preload="metadata"
+                preload="none"
             ></video>
 
             <div class="hero-video-placeholder"></div>
@@ -263,12 +268,9 @@ Where Quality Meets Comfort.
                 </div>
             </div>
 
-            <!-- Video progress indicators -->
+            <!-- Video progress indicators (one per hero video) -->
             <div class="hero-indicators" aria-hidden="true">
                 <div class="hero-indicator active">
-                    <div class="hero-indicator-fill"></div>
-                </div>
-                <div class="hero-indicator">
                     <div class="hero-indicator-fill"></div>
                 </div>
                 <div class="hero-indicator">
@@ -386,6 +388,8 @@ Where Quality Meets Comfort.
                         src="assets/images/about.png"
                         alt="WealthSpring Properties — our team or site"
                         class="about-img"
+                        loading="lazy"
+                        decoding="async"
                         style="
                             width: 100%;
                             border-radius: var(--radius-md);
@@ -437,20 +441,19 @@ Where Quality Meets Comfort.
                         data-property="site-alpha"
                         role="button"
                         tabindex="0"
-                        aria-label="View details for Greenfield Estate Site Alpha"
+                        aria-label="Legacy Arena, Apo Wasa, FCT Abuja"
                     >
                         <div class="property-card-img-wrap">
-                            <!--
-            Replace placeholder with:
-            <img src="assets/images/properties/site-alpha.jpg" alt="Greenfield Estate" class="property-card-img" />
-          -->
                             <img
                                 src="assets/images/properties/Legacy Arena - WealthSpring.png"
                                 alt="Legacy Arena"
                                 class="property-card-img"
+                                width="640"
+                                height="360"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </div>
-
                         <div class="property-card-body">
                             <h3 class="property-card-name">Legacy Arena</h3>
                             <p class="property-card-location">
@@ -460,7 +463,6 @@ Where Quality Meets Comfort.
                                 <span class="property-card-price"
                                     >From &#8358;7.5M</span
                                 >
-                                <span class="property-card-price-note"></span>
                             </div>
                             <div class="property-card-meta">
                                 <span class="property-meta-tag"
@@ -472,10 +474,8 @@ Where Quality Meets Comfort.
                                 <span class="property-meta-tag">Surveyed</span>
                             </div>
                             <div class="property-card-actions">
-                                <button class="btn btn-gold">
-                                    View Details
-                                </button>
                                 <button
+                                    type="button"
                                     class="btn btn-outline-gold"
                                     data-wa="enquiry"
                                 >
@@ -491,13 +491,17 @@ Where Quality Meets Comfort.
                         data-property="site-beta"
                         role="button"
                         tabindex="0"
-                        aria-label="View details for WealthSpring Courts Site Beta"
+                        aria-label="Majestic Groove, Apo, FCT Abuja"
                     >
                         <div class="property-card-img-wrap">
                             <img
                                 src="assets/images/properties/Majestic Groove.png"
                                 alt="Majestic Groove"
                                 class="property-card-img"
+                                width="640"
+                                height="360"
+                                loading="lazy"
+                                decoding="async"
                             />
                             <span class="property-badge property-badge-dark"
                                 >Hot Deal</span
@@ -512,7 +516,6 @@ Where Quality Meets Comfort.
                                 <span class="property-card-price"
                                     >From &#8358;15M</span
                                 >
-                                <span class="property-card-price-note"></span>
                             </div>
                             <div class="property-card-meta">
                                 <span class="property-meta-tag"
@@ -524,12 +527,10 @@ Where Quality Meets Comfort.
                                 <span class="property-meta-tag"
                                     >Documented</span
                                 >
-                            </div><a href="properties.html" role="menuitem">All Properties</a>
+                            </div>
                             <div class="property-card-actions">
-                                <button class="btn btn-gold">
-                                    View Details
-                                </button>
                                 <button
+                                    type="button"
                                     class="btn btn-outline-gold"
                                     data-wa="enquiry"
                                 >
@@ -545,13 +546,17 @@ Where Quality Meets Comfort.
                         data-property="site-gamma"
                         role="button"
                         tabindex="0"
-                        aria-label="View details for Springview Gardens Site Gamma"
+                        aria-label="Wealth Residence, Maitama II, FCT Abuja"
                     >
                         <div class="property-card-img-wrap">
                             <img
                                 src="assets/images/properties/Wealth Residence - WealthSpring.png"
                                 alt="Wealth Residence"
                                 class="property-card-img"
+                                width="640"
+                                height="360"
+                                loading="lazy"
+                                decoding="async"
                             />
                             <span class="property-badge property-badge-dark"
                                 >New</span
@@ -566,7 +571,6 @@ Where Quality Meets Comfort.
                                 <span class="property-card-price"
                                     >From &#8358;10M</span
                                 >
-                                <span class="property-card-price-note"></span>
                             </div>
                             <div class="property-card-meta">
                                 <span class="property-meta-tag"
@@ -580,10 +584,8 @@ Where Quality Meets Comfort.
                                 >
                             </div>
                             <div class="property-card-actions">
-                                <button class="btn btn-gold">
-                                    View Details
-                                </button>
                                 <button
+                                    type="button"
                                     class="btn btn-outline-gold"
                                     data-wa="enquiry"
                                 >
@@ -1083,7 +1085,8 @@ Where Quality Meets Comfort.
                     </div>
                     <div class="contact-detail-text">
                         <strong>Location</strong>
-                        <span>FCT Abuja, Nigeria</span>
+                        <span>Suite 082, De Avalon Plaza, Opposite
+                                        Kia Motors, Utako,FCT Abuja, Nigeria</span>
                     </div>
                 </div>
                 <div class="contact-detail">
@@ -1182,7 +1185,8 @@ Where Quality Meets Comfort.
             
             // --- 1. EMAIL FORM HANDLER ---
             const contactForm = document.getElementById('contact-form');
-            
+            if (!contactForm) return;
+
             contactForm.addEventListener('submit', function(e) {
                 // Prevent the browser from handling it messily
                 e.preventDefault(); 
@@ -1288,7 +1292,7 @@ ${message}
                                 <li>
                                     <a href="properties.html">All Properties</a>
                                 </li>
-                                <li><a href="spring-ai.html">SpringAI</a></li>
+                                <!--<li><a href="spring-ai.html">SpringAI</a></li>-->
                                 <li><a href="#faq">FAQ</a></li>
                                 <li><a href="#contact">Contact</a></li>
                             </ul>
@@ -1307,17 +1311,10 @@ ${message}
                                     </button>
                                 </li>
                                 <li>
-                                    <a href="spring-ai.html"
-                                        >Chat with SpringAI</a
-                                    >
-                                </li>
-                                <li>
-                                    <span
-                                        style="
-                                            font-size: 0.8rem;
-                                            color: rgba(255, 255, 255, 0.35);
-                                        "
-                                        >FCT Abuja, Nigeria</span
+                                    <span class="footer-address"
+                                        >Suite 082, De Avalon Plaza, Opposite
+                                        Kia Motors, Utako, FCT Abuja,
+                                        Nigeria</span
                                     >
                                 </li>
                             </ul>
@@ -1338,7 +1335,7 @@ ${message}
         <!-- ================================================
      PROPERTY MODAL
 ================================================ -->
-        <div
+        <!--<div
             class="modal-overlay"
             id="modal-overlay"
             role="dialog"
@@ -1346,8 +1343,8 @@ ${message}
             aria-label="Property Details"
         >
             <div class="modal-box" id="modal-content">
-                <!-- Populated by main.js -->
-            </div>
+                <-- Populated by main.js -->
+            </div> 
         </div>
 
         <!-- ================================================
@@ -1374,6 +1371,6 @@ ${message}
             </svg>
         </button>
 
-        <script src="js/main.js"></script>
+        <script src="js/main.js" defer></script>
     </body>
 </html>

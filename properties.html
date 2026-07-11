@@ -14,6 +14,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+    />
 
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -332,15 +336,11 @@
             class="property-card fade-up"
             data-property="site-alpha">
             <div class="property-card-img-wrap">
-              <!--
-            Replace placeholder with:
-            <img src="assets/images/properties/site-alpha.jpg" alt="Greenfield Estate" class="property-card-img" />
-          -->
+              <!-- Real listing images are used below -->
               <img
                 src="assets/images/properties/WealthSpring Legacy Court.png"
                 alt="Legacy Court"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
             </div>
 
             <div class="property-card-body">
@@ -373,8 +373,7 @@
               <img
                 src="assets/images/properties/Wealthcourt - WealthSpring 1.png"
                 alt="WealthCourt"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">Hot Deal</span>
             </div>
             <div class="property-card-body">
@@ -407,8 +406,7 @@
               <img
                 src="assets/images/properties/Wealth Residence - WealthSpring.png"
                 alt="Wealth Residence"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -441,8 +439,7 @@
               <img
                 src="assets/images/properties/Havilahs Court.png"
                 alt="Havilahs Court"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -474,8 +471,7 @@
               <img
                 src="assets/images/properties/SUNCREST ESTATE.png"
                 alt="Suncrest Estate"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -507,8 +503,7 @@
               <img
                 src="assets/images/properties/HUTU POLO ESTATE.png"
                 alt="Hutu Polo Golf Resort"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -542,8 +537,7 @@
               <img
                 src="assets/images/properties/SAVE_20260626_210710.jpg"
                 alt="Upper Haven"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -575,8 +569,7 @@
               <img
                 src="assets/images/properties/Stabug Golf Resort - WealthSpring.png"
                 alt="Stabug Golf Resort"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -608,8 +601,7 @@
               <img
                 src="assets/images/properties/Wealth Residence (phase 2) - WealthSpring.png"
                 alt="Signature Estate"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -641,8 +633,7 @@
               <img
                 src="assets/images/properties/Comfort Villa Redesign.png"
                 alt="Comfort Villa"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -674,8 +665,7 @@
               <img
                 src="assets/images/properties/Ridge City Redesign.png"
                 alt="Ridge City"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -707,8 +697,7 @@
               <img
                 src="assets/images/properties/Homesphere Redesign.png"
                 alt="Homesphere"
-                class="property-card-img"
-              />
+                class="property-card-img" loading="lazy" decoding="async" />
               <span class="property-badge property-badge-dark">New</span>
             </div>
             <div class="property-card-body">
@@ -944,7 +933,7 @@
 
     
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <script>
       /* Filter chips — visual only for now */
       document.querySelectorAll(".filter-chip").forEach(function (chip) {
