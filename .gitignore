@@ -1,3 +1,20 @@
-assets/videos/video4.mp4
-.aider*
+# Secrets
 .env
+.env.*
+!.env.example
+
+# Dependencies / local tooling
+node_modules/
+.vercel
+.aider*
+.DS_Store
+Thumbs.db
+
+# Large local-only media (omit from git & deploy)
+assets/videos/video4.mp4
+
+# Editor / OS
+*.log
+.idea/
+*.swp
+*.swo

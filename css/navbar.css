@@ -12,7 +12,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: var(--nav-height);
+  height: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -27,11 +28,17 @@
 }
 
 .nav-inner {
-  height: 100%;
-  padding: 0 var(--page-x);
+  height: var(--nav-height);
+  padding: 0 max(var(--page-x), env(safe-area-inset-right, 0px))
+             0 max(var(--page-x), env(safe-area-inset-left, 0px));
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* -----------------------------------------------
@@ -41,23 +48,23 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 2px;
   text-decoration: none;
-  flex-shrink: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: calc(100% - 52px); /* reserve space for hamburger */
   line-height: 1;
 }
 
-/*
-  LOGO IMAGE — once you have the file ready:
-  Replace .nav-logo-text with:
-  <img src="assets/logo/logo.png" alt="WealthSpring Properties" class="nav-logo-img" />
-
-  Then add this rule:
-  .nav-logo-img { height: 38px; width: auto; object-fit: contain; }
-*/
-
-.nav-logo-img { 
-  height: 38px; width: auto; object-fit: contain; }
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
 
 .nav-tagline {
   font-family: var(--sans);
@@ -85,31 +92,39 @@
    HAMBURGER BUTTON
 ----------------------------------------------- */
 .nav-hamburger {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  margin: 0;
+  margin-left: auto; /* pin to the right edge of the bar */
   background: none;
   border: none;
   cursor: pointer;
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .nav-hamburger span {
   display: block;
   width: 22px;
-  height: 1.5px;
+  height: 2px;
   background: var(--black);
   border-radius: 1px;
   transition: transform 0.32s var(--ease), opacity 0.32s var(--ease);
   transform-origin: center;
+  flex-shrink: 0;
 }
 
 .nav-hamburger.open span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .nav-hamburger.open span:nth-child(2) {
@@ -118,7 +133,7 @@
 }
 
 .nav-hamburger.open span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* -----------------------------------------------
@@ -126,13 +141,15 @@
 ----------------------------------------------- */
 .nav-drawer {
   position: fixed;
-  top: var(--nav-height);
+  top: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
   left: 0;
   right: 0;
   bottom: 0;
   background: var(--white);
   z-index: 999;
-  padding: 28px var(--page-x) 48px;
+  padding: 28px max(var(--page-x), env(safe-area-inset-right, 0px))
+           calc(48px + env(safe-area-inset-bottom, 0px))
+           max(var(--page-x), env(safe-area-inset-left, 0px));
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
@@ -251,6 +268,17 @@
 /* -----------------------------------------------
    DESKTOP NAV  1024px+
 ----------------------------------------------- */
+@media (min-width: 768px) {
+  .nav-logo-img {
+    height: 38px;
+  }
+
+  .nav-brand {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+}
+
 @media (min-width: 1024px) {
 
   .nav-hamburger {
@@ -259,6 +287,15 @@
 
   .nav-drawer {
     display: none;
+  }
+
+  .nav-brand {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+
+  .nav-logo-img {
+    height: 42px;
   }
 
   .nav-links-desktop {

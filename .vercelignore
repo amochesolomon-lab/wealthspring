@@ -1,0 +1,25 @@
+# Dev / agent tooling — not needed on Vercel
+.claude
+.claude-flow
+.swarm
+.vscode
+.aider*
+CLAUDE.md
+*.md
+!README.md
+
+# Secrets & local env
+.env
+.env.*
+!.env.example
+
+# Local / unused backend stubs
+backend
+
+# Huge local-only media (already gitignored)
+assets/videos/video4.mp4
+
+# Git metadata
+.git
+.gitignore
+.gitattributes

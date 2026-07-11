@@ -57,8 +57,9 @@ Where Quality Meets Comfort.
                     <a href="#contact" role="menuitem">Contact</a>
                 </div>
 
-                <!-- Desktop CTA -->
-                <!--<div class="nav-desktop-cta">
+                <!-- Desktop CTA (hidden on mobile via CSS) -->
+                <div class="nav-desktop-cta">
+                    <!-- SpringAI temporarily disabled
                     <a
                         href="spring-ai.html"
                         class="btn btn-spring-ai"
@@ -82,7 +83,8 @@ Where Quality Meets Comfort.
                             />
                         </svg>
                         SpringAI
-                    </a>-->
+                    </a>
+                    -->
                     <button
                         class="btn btn-whatsapp btn-cta"
                         data-wa="general"
@@ -111,6 +113,7 @@ Where Quality Meets Comfort.
                     aria-label="Open navigation menu"
                     aria-expanded="false"
                     aria-controls="nav-drawer"
+                    type="button"
                 >
                     <span></span>
                     <span></span>
@@ -208,13 +211,7 @@ Where Quality Meets Comfort.
                 playsinline
                 preload="metadata"
             ></video>
-            <video
-                class="hero-video"
-                src="assets/videos/video4.mp4"
-                muted
-                playsinline
-                preload="metadata"
-            ></video>
+            <!-- video4.mp4 omitted: large file not shipped with deploy -->
             <video
                 class="hero-video"
                 src="assets/videos/video5.mp4"
