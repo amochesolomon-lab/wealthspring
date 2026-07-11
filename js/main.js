@@ -90,22 +90,117 @@ if (hamburger && navDrawer) {
 
 
 /* -----------------------------------------------
-   HERO VIDEO CROSSFADE
-   Looks for .hero-video elements.
-   If none exist, the placeholder gradient stays.
-   Videos fade out 3 seconds before ending.
+   HERO VIDEO CROSSFADE — Cloudinary CDN
+   Requires js/cloudinary-config.js (loads first).
+   Lazy-assigns src only for current + next slide.
+   Videos fade out 3 seconds before slide advance.
 ----------------------------------------------- */
 (function initHeroVideos() {
   var videos     = Array.from(document.querySelectorAll('.hero-video'));
   var indicators = Array.from(document.querySelectorAll('.hero-indicator'));
+  var cfg        = window.WEALTHSPRING_CLOUDINARY || {};
+  var slides     = Array.isArray(cfg.videos) ? cfg.videos : [];
 
   if (videos.length === 0) return;
 
-  var current          = 0;
-  var slideTimer       = null;
-  var fadeTimer        = null;
-  var VIDEO_DURATIONS  = [15, 15, 15, 15];
-  var FADE_OUT_OFFSET  = 3;
+  var current         = 0;
+  var slideTimer      = null;
+  var fadeTimer       = null;
+  var FADE_OUT_OFFSET = 3;
+  var DEFAULT_DURATION = 15;
+  var cloudReady =
+    cfg.cloudName &&
+    cfg.cloudName !== '' &&
+    typeof window.cldVideoUrl === 'function';
+
+  if (!cloudReady) {
+    console.warn(
+      '[WealthSpring] Set WEALTHSPRING_CLOUDINARY.cloudName in js/cloudinary-config.js ' +
+        'and upload hero videos to Cloudinary. Showing gradient placeholder.'
+    );
+    return;
+  }
+
+  /* Wire each <video> to its Cloudinary public ID (poster only at first) */
+  videos.forEach(function (el, i) {
+    var slide = slides[i];
+    var publicId = el.getAttribute('data-cld-id') || (slide && slide.publicId);
+
+    if (!publicId) {
+      console.warn('[WealthSpring] Missing Cloudinary publicId for hero video', i);
+      return;
+    }
+
+    el.setAttribute('data-cld-id', publicId);
+    el.dataset.duration = String(
+      (slide && slide.duration) || DEFAULT_DURATION
+    );
+    el.muted = true;
+    el.playsInline = true;
+    el.setAttribute('playsinline', '');
+    el.setAttribute('webkit-playsinline', '');
+    el.preload = 'none';
+    el.poster = window.cldPosterUrl(publicId);
+  });
+
+  function getDuration(index) {
+    var el = videos[index];
+    var fromData = el && parseFloat(el.dataset.duration);
+    if (fromData && !isNaN(fromData)) return fromData;
+    var slide = slides[index];
+    return (slide && slide.duration) || DEFAULT_DURATION;
+  }
+
+  /** Assign Cloudinary video URL once; safe to call repeatedly */
+  /** Assign Cloudinary video URL once; safe to call repeatedly */
+  function ensureSource(index) {
+    var el = videos[index];
+    if (!el) return Promise.resolve();
+
+    var publicId = el.getAttribute('data-cld-id');
+    if (!publicId) return Promise.resolve();
+
+    var url = window.cldVideoUrl(publicId);
+    
+    /* FIX: Force the URL to end with .mp4 so Cloudinary serves the video format correctly */
+    if (!url.endsWith('.mp4')) {
+      url += '.mp4';
+    }
+
+    if (el.getAttribute('data-cld-src') === url && el.src) {
+      return Promise.resolve();
+    }
+
+    return new Promise(function (resolve) {
+  function onReady() {
+    el.removeEventListener('loadeddata', onReady);
+    el.removeEventListener('error', onError);
+    resolve();
+  }
+  function onError() {
+    el.removeEventListener('loadeddata', onReady);
+    el.removeEventListener('error', onError);
+    console.warn('[WealthSpring] Failed to load Cloudinary video:', publicId);
+    resolve();
+  }
+
+  el.addEventListener('loadeddata', onReady, { once: true });
+  el.addEventListener('error', onError, { once: true });
+  el.preload = 'auto';
+  el.src = url; // 1. Assign the URL first
+  el.setAttribute('data-cld-src', url);
+  
+  // 2. Now log it so you can see what it actually is!
+  console.log("Attempting to load URL:", el.src); 
+  
+  el.load();
+});
+  }
+
+  function preloadNext(index) {
+    var next = (index + 1) % videos.length;
+    ensureSource(next);
+  }
 
   function clearSlideTimers() {
     clearTimeout(slideTimer);
@@ -113,57 +208,68 @@ if (hamburger && navDrawer) {
   }
 
   function showSlide(index) {
+    if (index < 0 || index >= videos.length) return;
     clearSlideTimers();
 
-    /* Hide all */
-    videos.forEach(function (v, i) {
-      v.classList.remove('active', 'ending');
-      if (i !== index) { v.pause(); }
-    });
+    ensureSource(index).then(function () {
+      /* Hide others */
+      videos.forEach(function (v, i) {
+        v.classList.remove('active', 'ending');
+        if (i !== index) {
+          try { v.pause(); } catch (e) { /* ignore */ }
+        }
+      });
 
-    /* Reset indicators */
-    indicators.forEach(function (dot, i) {
-      dot.classList.toggle('active', i === index);
-      var fill = dot.querySelector('.hero-indicator-fill');
-      if (fill) { fill.style.animation = 'none'; }
-    });
+      /* Indicators */
+      indicators.forEach(function (dot, i) {
+        dot.classList.toggle('active', i === index);
+        var fill = dot.querySelector('.hero-indicator-fill');
+        if (fill) { fill.style.animation = 'none'; }
+      });
 
-    /* Show current */
-    videos[index].classList.add('active');
-    videos[index].currentTime = 0;
-    videos[index].play().catch(function () {
-      /* Autoplay blocked — video will show as poster */
-    });
+      var video = videos[index];
+      video.classList.add('active');
 
-    /* Re-trigger indicator animation */
-    if (indicators[index]) {
-      indicators[index].classList.add('active');
-      var fill = indicators[index].querySelector('.hero-indicator-fill');
-      if (fill) {
-        var duration = VIDEO_DURATIONS[index] || 8;
-        fill.style.setProperty('--indicator-duration', duration + 's');
-        /* Force reflow then re-enable animation */
-        void fill.offsetWidth;
-        fill.style.animation = '';
+      try {
+        video.currentTime = 0;
+      } catch (e) { /* ignore seek before ready */ }
+
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function () {
+          /* Autoplay blocked — poster frame stays visible */
+        });
       }
-    }
 
-    current = index;
+      var duration = getDuration(index);
 
-    var durationMs = (VIDEO_DURATIONS[index] || 8) * 1000;
-    fadeTimer = setTimeout(function () {
-      videos[index].classList.add('ending');
-    }, Math.max(durationMs - FADE_OUT_OFFSET * 1000, 0));
+      if (indicators[index]) {
+        indicators[index].classList.add('active');
+        var fill = indicators[index].querySelector('.hero-indicator-fill');
+        if (fill) {
+          fill.style.setProperty('--indicator-duration', duration + 's');
+          void fill.offsetWidth;
+          fill.style.animation = '';
+        }
+      }
 
-    slideTimer = setTimeout(function () {
-      videos[index].classList.remove('ending');
-      nextSlide();
-    }, durationMs);
+      current = index;
+      preloadNext(index);
+
+      var durationMs = duration * 1000;
+      fadeTimer = setTimeout(function () {
+        videos[index].classList.add('ending');
+      }, Math.max(durationMs - FADE_OUT_OFFSET * 1000, 0));
+
+      slideTimer = setTimeout(function () {
+        videos[index].classList.remove('ending');
+        nextSlide();
+      }, durationMs);
+    });
   }
 
   function nextSlide() {
-    var next = (current + 1) % videos.length;
-    showSlide(next);
+    showSlide((current + 1) % videos.length);
   }
 
   videos.forEach(function (v, index) {
@@ -176,14 +282,12 @@ if (hamburger && navDrawer) {
     });
   });
 
-  /* Indicator click */
   indicators.forEach(function (dot, i) {
     dot.addEventListener('click', function () {
       showSlide(i);
     });
   });
 
-  /* Kick off */
   showSlide(0);
 })();
 
@@ -247,7 +351,7 @@ document.querySelectorAll('.faq-item').forEach(function (item) {
 });
 
 
-/* -----------------------------------------------
+/*/* -----------------------------------------------
    PROPERTY MODAL
    Property data lives here as an object.
    When the backend is ready, replace this with

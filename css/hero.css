@@ -20,13 +20,13 @@
 .hero-video-layer {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /*
-  VIDEO ELEMENTS
-  When real videos are added, each .hero-video starts at opacity 0.
-  JS adds .active to show the current one and crossfades between them.
+  Cloudinary-delivered <video> elements.
+  JS adds .active to show the current clip and crossfades between them.
 */
 .hero-video {
   position: absolute;
@@ -37,18 +37,20 @@
   object-position: center;
   opacity: 0;
   z-index: 1;
+  background: #0d0b06;
   transition: opacity 1.2s ease-in-out;
 }
 
 .hero-video.active {
   opacity: 1;
+  z-index: 2;
 }
 
 .hero-video.active.ending {
   opacity: 0.75;
 }
 
-/* Placeholder shown before videos are added */
+/* Fallback gradient while Cloudinary posters / streams load */
 .hero-video-placeholder {
   position: absolute;
   inset: 0;
